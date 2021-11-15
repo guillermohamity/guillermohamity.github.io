@@ -1,0 +1,15 @@
+#+TITLE: Particle Physics Abroad
+#+DESCRIPTION: Physics Abroad - My professional profile
+#+SETUPFILE: ~/Documents/publishing/physics-webpage/org-html-themes/org/theme-readtheorg.setup
+#+OPTIONS: num:nil ^:{}
+#+INCLUDE: "~/Documents/publishing/physics-webpage/header.org"
+
+
+#+ATTR_HTML: :alt Guillermo Hamity :title Guillermo Hamity :style float:left;margin-bottom:20px;  
+[[file:arge.jpg]]
+
+* Welcome
+I'll add some text.
+
+
+#+INCLUDE: "~/Documents/publishing/physics-webpage/footer.org"

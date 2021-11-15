@@ -1,0 +1,34 @@
+#+TITLE: Particle Physics Abroad
+#+DESCRIPTION: Physics Abroad - My professional profile
+#+SETUPFILE: ~/Documents/publishing/physics-webpage/org-html-themes/org/theme-readtheorg.setup
+#+OPTIONS: num:nil ^:{}
+#+INCLUDE: "~/Documents/publishing/physics-webpage/header.org"
+
+
+* Data Analysis and Machine Learning 2021
+
+** Analysis tools and boosted decision trees
+ #+begin_export html
+  <iframe src="slides/Lecture2-tools-and-bts.pdf" width="100%" height="500px">
+     </iframe>
+ #+end_export
+** Deep Neural Networks
+ #+begin_export html
+  <iframe src="slides/Lecture3-DNNs.pdf" width="100%" height="500px">
+     </iframe>
+ #+end_export
+** Convolutional Neural Networks and Auto Encoders
+ #+begin_export html
+ <iframe src="slides/Lecture5-CNNs-and-AEs.pdf" width="100%" height="500px">
+     </iframe>
+ #+end_export
+** Generative Models
+ #+begin_export html
+ <iframe src="slides/Lecture6-VAEs and GANs.pdf" width="100%" height="500px">
+     </iframe>
+ #+end_export
+** Project
+   [[file:Project1_ML.html::<!DOCTYPE html>]]
+
+
+#+INCLUDE: "~/Documents/publishing/physics-webpage/footer.org"

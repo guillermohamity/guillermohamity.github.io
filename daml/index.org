@@ -1,0 +1,20 @@
+#+TITLE: Particle Physics Abroad
+#+DESCRIPTION: Physics Abroad - My professional profile
+#+SETUPFILE: ~/Documents/publishing/physics-webpage/org-html-themes/org/theme-readtheorg.setup
+#+OPTIONS: num:nil ^:{}
+#+INCLUDE: "~/Documents/publishing/physics-webpage/header.org"
+
+
+* Data Analysis and Machine Learning 2021
+** Machine Learning Lectures
+ 1. [[file:slides/Lecture2-tools-and-bts.pdf]]
+ 2. [[file:slides/Lecture3-DNNs.pdf]]
+ 3. [[file:slides/Lecture5-CNNs-and-AEs.pdf]]
+ 4. [[file:slides/Lecture6-VAEs and GANs.pdf]]
+
+
+** Project
+   [[file:Project1_ML.html::<!DOCTYPE html>]]
+
+
+#+INCLUDE: "~/Documents/publishing/physics-webpage/footer.org"

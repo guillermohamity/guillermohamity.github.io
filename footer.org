@@ -1,0 +1,7 @@
+#+DESCRIPTION: Footer
+#+SETUPFILE: ~/Documents/publishing/physics-webpage/org-html-themes/org/theme-readtheorg.setup
+#+OPTIONS: num:nil ^:{}
+
+* Footer
+Copyright © 2021-2022 Guillermo Hamity (University of Edinburgh)
+

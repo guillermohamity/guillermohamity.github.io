@@ -1,0 +1,19 @@
+#+TITLE: Particle Physics Abroad
+#+DESCRIPTION: Physics Abroad - My professional profile
+#+SETUPFILE: ~/Documents/publishing/physics-webpage/org-html-themes/org/theme-readtheorg.setup
+#+OPTIONS: num:nil ^:{}
+#+INCLUDE: "~/Documents/publishing/physics-webpage/header.org"
+
+#+ATTR_HTML: :alt Guillermo Hamity :title Guillermo Hamity :style float:left;margin-bottom:20px;  
+[[file:../arge.jpg]]
+* Links
+  - [[https://www.linkedin.com/in/guillermo-hamity-05243a152/][likedin]]
+  - [[https://twitter.com/hamitynicolas][twitter]]
+* Curriculum vitae
+   #+begin_export html
+ <iframe src="https://ghamity.web.cern.ch/ghamity/cv_2.pdf" width="100%" height="500px">
+     </iframe>
+ #+end_export
+* Contact
+  
+ #+INCLUDE: "~/Documents/publishing/physics-webpage/footer.org"
