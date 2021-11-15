@@ -6,7 +6,7 @@
 
 
 #+ATTR_HTML: :alt Guillermo Hamity :title Guillermo Hamity :style float:left;margin-bottom:20px;  
-[[file:arge.jpg]]
+[[file:prof2.png]]
 
 * Welcome
 I'll add some text.
