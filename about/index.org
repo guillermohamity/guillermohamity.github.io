@@ -6,12 +6,25 @@
 
 #+ATTR_HTML: :alt Guillermo Hamity :title Guillermo Hamity :style float:left;margin-bottom:20px;  
 * Curriculum vitae
+** Short
+ #+begin_export html
+ <iframe src="../pdfresume/ghamity-short.pdf" width="100%" height="500px">
+     </iframe>
+ #+end_export
+** Long (Academic)
+ #+begin_export html
+  <iframe src="../pdfresume/main.pdf" width="100%" height="500px">
+     </iframe>
+ #+end_export
+
+* Dontexport                                                       :noexport:
+
   - [[file:gnh.resume.html][Full page view]]
   #+begin_export html
    <object data=gnh.resume.html style="width:100%;height:700px"> <embed src=gnh.resume.html width="600" height="400"> </embed> Error: Embedded data could not be displayed. </object>
  #+end_export
-* Dontexport                                                       :noexport:
-   <iframe src="https://ghamity.web.cern.ch/ghamity/cv_2.pdf" width="150%" height="500px">
+
+  <iframe src="https://ghamity.web.cern.ch/ghamity/cv_2.pdf" width="150%" height="500px">
        </iframe>
 
 [[file:../arge.jpg]]
