@@ -9,7 +9,7 @@
 [[file:prof2.png]]
 
 * Welcome
-I'll add some text.
+Postdoctoral Research Associate in Experimental High Energy Particle Physics at the University of Edinburgh. Research focused on new physics in the ATLAS Experiment at the Large Hadron Collider, searching for long-lived exotic particles. Passionate about applied data analysis with experience in a variety of techniques, including data preparation, distributed computing, machine learning, model fittings and hypothesis testing. I have been involved in several publications and am experienced in collaborative research. My doctoral research focused on Higgs searches and interpretations, and building and testing of silicon strip modules for the ITk upgrade. I am integrated into leadership roles within ATLAS and have experience with lecturing and student supervision.
 
 
 #+INCLUDE: "~/Documents/publishing/physics-webpage/footer.org"
