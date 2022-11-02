@@ -1,0 +1,385 @@
+% Preamble
+% Compile with XeLateX
+
+\documentclass[11 pt,oneside,a4paper,titlepage]{article}
+\usepackage{preamble}
+\usepackage{luacode}
+\newcommand{\json}[1]{\directlua{tex.print(table#1)}}
+\graphicspath{{PIC/}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+% load json file
+\begin{luacode}
+function read(file)
+    local handler = io.open(file, "rb")
+    local content = handler:read("*all")
+    handler:close()
+    return content
+end
+JSON = (loadfile "JSON.lua")()
+table = JSON:decode(read("resume.json"))
+\end{luacode}
+
+
+\sidebar{sideBarColor!25}
+\simpleheader{titleBackColor}{Guillermo}{Hamity}{Postdoctoral Researcher | Particle Physics}{white}
+
+% Start Minipages
+\vspace*{3.49cm}% start 8 cm from the top of the page}
+    \adjustbox{valign=t}{\begin{minipage}{7.3cm} % large 7.4 cm from the top
+    \vspace*{1.2cm} % text starts 1cm under the top of the minipage
+            
+        % Picture
+        \begin{center}
+        \begin{tikzpicture}
+            \node[
+            circle,
+            minimum size=\cvPictureWidth,
+            path picture={
+            \node at (path picture bounding box.center){
+             \includegraphics[width=\cvPictureWidth]{profile.jpeg}
+             };
+             }]
+            {};
+        \end{tikzpicture}
+        \end{center}
+        
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        % Contact Section
+        \ruleline{\textbf{Contact}}
+        \begin{tikzpicture}[every node/.style={inner sep=0pt, outer sep=0pt}]
+        \matrix [
+        column 1/.style={anchor=center,contactIcon},
+        column 2/.style={anchor=west,align=left,contactIcon},
+        column sep=5pt,
+        row sep=5pt] (contact) {
+        \node{\faMale};
+        & \node{\href{\json{['basics']['profiles'][1]['url']}}{\json{['basics']['profiles'][1]['username']}}};\\
+        \node{\faEnvelope}; 
+         & \node{\href{mailto:\directlua{tex.print(table['basics']['email'])}}{\directlua{tex.print(table['basics']['email'])}}};\\
+         \node{\faEnvelopeO}; 
+         & \node{\href{mailto:guillermo.nicolas.hamity@cern.ch}{guillermo.nicolas.hamity@cern.ch}};\\
+        \node{\faPhone}; 
+         & \node{\directlua{tex.print(table['basics']['phone'])}};\\ 
+        \node{\faMapMarker}; 
+        & \node{Office 3404, JCMB \\ Kings Buildings, University of Edinburgh\\EH9 3FD, Scotland, UK};\\
+        \node{\faLinkedinSquare}; 
+        & \node{\href{\json{['basics']['profiles'][2]['url']}}{\json{['basics']['profiles'][2]['username']}}};\\
+        \node{\faGithub}; 
+        & \node{\href{\json{['basics']['profiles'][3]['url']}}{\json{['basics']['profiles'][3]['username']}}};\\
+        \node{\faGitlab}; 
+        & \node{\href{\json{['basics']['profiles'][4]['url']}}{\json{['basics']['profiles'][4]['username']}}};\\
+        \node{\aiOrcid}; 
+        & \node{\href{\json{['basics']['profiles'][5]['url']}}{ORCID: \json{['basics']['profiles'][5]['username']}}};\\
+        \node{\faTwitter}; 
+        & \node{\href{\json{['basics']['profiles'][6]['url']}}{\json{['basics']['profiles'][6]['username']}}};\\
+         };
+        \end{tikzpicture} 
+        
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        \ruleline{\textbf{Languages}}
+        \begin{tikzpicture}[every node/.style={inner sep=0pt, outer sep=0pt}]
+        \matrix [
+        column 1/.style={anchor=center,contactIcon},
+        column 2/.style={anchor=west,align=left,contactIcon},
+        column sep=5pt,
+        row sep=5pt] (contact) {
+        \node{\flag{England.png}};
+        & \node{\json{['languages'][1]['language']} -- \json{['languages'][1]['fluency']}};\\
+        \node{\flag{argentina.png}};
+        & \node{\json{['languages'][2]['language']} -- \json{['languages'][2]['fluency']}};\\
+        \node{\flag{ZAR.png}};
+        & \node{\json{['languages'][3]['language']} -- \json{['languages'][3]['fluency']}};\\
+        \node{\flag{France.png}};
+        & \node{\json{['languages'][4]['language']} -- \json{['languages'][4]['fluency']}};\\
+        };
+        \end{tikzpicture} 
+        
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        % QR Code
+        \begin{center}
+            \includegraphics[width=3.5cm]{QR_Info.png}
+        \end{center}
+        
+    \end{minipage}} %
+    \hfill 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% MAIN SECTION %%%%%%%%%%%%%%%%%%%%
+    \adjustbox{valign=t}{\begin{minipage}{11.3cm}
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        % Profile section
+        \vspace*{1cm}
+        \ruleline{\textbf{About me}}
+        \json{['basics']['summary']}
+        \vspace*{1cm}
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        % Work Experience
+        \section*{{\faSuitcase} WORK EXPERIENCE}
+        \MySection{2018-Ongoing}{Ship.png}{Master Degree}{Pirate University}{Tortuga, Caribbean}{Faculty}{A description of your piracy. \\\textbf{Degree: 110/110 cum laude}}
+                        
+        \vspace*{0.22cm}
+        \MySection{2019-Ongoing}{ued-blackonwhite.png}{\json{['work'][1]['name']}}{fasd}{\json{['work'][1]['location']}}{\json{['work'][1]['position']}}{A description of your piracy.}
+        \vspace*{0.22cm}
+            
+        \MySectionNoPic{2010-2020}{Freelance Pirate}{Tortuga, Caribbean}{Buccaneering SPA}{\lipsum[24]}  
+            
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        % Publications
+        \section*{{\aiOBP} PUBLICATIONS}
+            
+        \publication{Journal Article}{1729}{How I almost got killed by Lady Swan}{Jack Sparrow, Elizabeth Swan, William Turner III, Davy Jones}{Tortuga Printing Press}{10.3389/doicodedoicode}
+            
+        \vspace*{0.22cm}
+             
+        \publication{Abstract}{1725}{The Kraken and other stories}{Jack Sparrow, Hector Barbossa, Jack the Monkey, Joshamee Gibbs}{1st Congress of Pirate}{10.1016/doicodedoicode}
+            
+        \vspace*{0.22cm}
+            
+        \publication{Conference Proceedings}{1724}{How I lost my ship and how to get it back}{Jack Sparrow}{Conference in Tortuga}{10.5220/doidoidoi}
+            
+        \vspace*{0.22cm}
+            
+    \end{minipage}} %
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Second Page
+\newpage
+
+\sidebar{sideBarColor!25}
+\newpageheader{titleBackColor}{Guillermo}{Hamity}{Data Science \faLightbulbO \hspace{1mm} Research}{white}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% SIDEBAR %%%%%%%%%%%%%%%%%%%
+\adjustbox{valign=t}{%
+\begin{minipage}{7.3cm} 
+\vspace*{0.4cm} % text starts 0.4cm under the top the header
+        
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % Professional Skills 
+    \ruleline{\textbf{Professional Skills}}
+    \ruleline{\json{['skills'][1]['name']}}
+    \begin{center}
+        \cvtag{\json{['skills'][1]['keywords'][2]}}
+        \cvtag{\json{['skills'][1]['keywords'][3]}}
+        \cvtag{\json{['skills'][1]['keywords'][4]}}
+        \cvtag{\json{['skills'][1]['keywords'][5]}}
+        \cvtag{\json{['skills'][1]['keywords'][6]}}
+        \cvtag{\json{['skills'][1]['keywords'][7]}}
+        \cvtag{\json{['skills'][1]['keywords'][8]}}        
+    \end{center}
+    \ruleline{\json{['skills'][2]['name']}}
+    \begin{center}
+        \cvtag{\json{['skills'][2]['keywords'][1]}}
+        \cvtag{\json{['skills'][2]['keywords'][2]}}
+        \cvtag{\json{['skills'][2]['keywords'][3]}}
+    \end{center}
+    \ruleline{\json{['skills'][3]['name']}}
+    \begin{center}
+        \cvtag{\json{['skills'][3]['keywords'][1]}}
+        \cvtag{\json{['skills'][3]['keywords'][2]}}
+        \cvtag{\json{['skills'][3]['keywords'][3]}}
+        \cvtag{\json{['skills'][3]['keywords'][4]}}
+    \end{center}
+    \ruleline{\json{['skills'][4]['name']}}
+    \begin{center}
+        \cvtag{\json{['skills'][4]['keywords'][1]}}
+        \cvtag{\json{['skills'][4]['keywords'][2]}}
+        \cvtag{\json{['skills'][4]['keywords'][3]}}
+        \cvtag{\json{['skills'][4]['keywords'][4]}}
+        \cvtag{\json{['skills'][4]['keywords'][5]}}
+        \cvtag{\json{['skills'][4]['keywords'][6]}}
+    \end{center}
+    \ruleline{\json{['skills'][5]['name']}}
+    \begin{center}
+        \cvtag{\json{['skills'][5]['keywords'][1]}}
+        \cvtag{\json{['skills'][5]['keywords'][2]}}
+        \cvtag{\json{['skills'][5]['keywords'][3]}}
+        \cvtag{\json{['skills'][5]['keywords'][4]}}
+        \cvtag{\json{['skills'][5]['keywords'][5]}}
+        \cvtag{\json{['skills'][5]['keywords'][6]}}
+    \end{center}
+    \ruleline{\json{['skills'][6]['name']}}
+    \begin{center}
+        \cvtag{\json{['skills'][6]['keywords'][1]}}
+        \cvtag{\json{['skills'][6]['keywords'][2]}}
+        \cvtag{\json{['skills'][6]['keywords'][3]}}
+        \cvtag{\json{['skills'][6]['keywords'][4]}}
+        \cvtag{\json{['skills'][6]['keywords'][5]}}
+        \cvtag{\json{['skills'][6]['keywords'][6]}}
+        \cvtag{\json{['skills'][6]['keywords'][7]}}
+        \cvtag{\json{['skills'][6]['keywords'][8]}}        
+        \cvtag{\json{['skills'][6]['keywords'][10]}}        
+        \cvtag{\json{['skills'][6]['keywords'][9]}}        
+    \end{center}
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % Skill and Strengths 
+    \ruleline{\textbf{Soft Skills and Strengths}}
+    \vspace*{-0.5cm}
+    \begin{center}
+        \cvtag{Creativity}\cvtag{Curiosity}\cvtag{Flexibility}\cvtag{Self Confidence}\cvtag{Ability to Plan and Organize} \cvtag{Autonomy}\cvtag{Adaptability} \cvtag{Eye for Details}\cvtag{Problem Solving}\cvtag{Team Working}\cvtag{Love Learning New Things}\cvtag{Leadership}\cvtag{Good Communication}\cvtag{Managing Information}\cvtag{Diplomacy}\cvtag{Good Listener}\cvtag{Patience}
+    \end{center}
+
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % Other Interests
+    %% \ruleline{\textbf{Other Interests}}
+    %% \small
+    %% \begin{multicols}{2}
+    %%     \begin{itemize} 
+    %%         \item  Guitar \flag{Guitar.png}
+    %%         \item  Piano \flag{Piano.png}
+    %%         \item  Chess \flag{Chess.png}
+    %%         \item  Gym \flag{Gym.png}
+    %%         \item  Travels \flag{Travels.png}
+    %%         \item  Movies \flag{movie2.png}
+    %%         \item  Books \flag{Books.png}
+    %% \end{itemize}
+    %% \end{multicols}
+
+     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        % QR Code
+        \ruleline{\textbf{Download My CV}}
+        \scriptsize
+        \centering
+        Download my CV via the QR below \aiOverleaf.
+        \begin{center}
+            \quad
+            \qrcode[height=2cm]{
+                https://www2.ph.ed.ac.uk/~ghamity/CVlink.png} \\
+            \vspace*{0.5cm}
+        \end{center}
+
+\end{minipage}
+}%
+\hfill
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% MAIN %%%%%%%%%%%%%%%%%%%%%%%%%
+\adjustbox{valign=t}{%
+\begin{minipage}{11.3cm}
+  \vspace*{0.4cm}
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % Education
+  
+        \section*{{\faGraduationCap} EDUCATION}
+
+        \MySection{2018-Ongoing}{Ship.png}{Master Degree}{Pirate University}{Tortuga, Caribbean}{Faculty}{A description of your piracy. \\\textbf{Degree: 110/110 cum laude}}
+            
+        \vspace*{0.22cm}
+            
+        \MySection{2016-2018}{Jolly-Roger.png}{Bachelor Degree}{Tortuga Academy}{East Indies}{Buccaneer}{Attacking and robbing ships at sea. \lipsum[150]\\\textbf{Degree: 110/110}}
+                
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % Peer Reviews
+    \section*{{\faBook} ACADEMIC PEER REVIEWS}
+    \footnotesize I did academic peer review for the following journals: 
+    \begin{itemize}
+        \footnotesize
+         \item{\textbf{Scientific Piracy}, IF: 4.996 (1720), September 1720;}
+     \end{itemize}
+        
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % Information Technology Skills
+    \section*{{\faDesktop} INFORMATION TECHNOLOGY SKILLS}
+    
+    \ITCcompetence{Data Analysis}{
+    \textbf{MATLAB}: \textit{Higly Specialized}\\
+    \textbf{Wolfram Mathematica}: \textit{Intermediate}\\
+    \textbf{Jupiter Notebook}: \textit{Intermediate}\\
+    }
+    
+    \vspace*{0.22cm}
+
+    \ITCcompetence{Modeling and Simulation}{
+    \textbf{Simulink} : \textit{Intermediate}  \\
+    \textbf{LTSpice}: \textit{Intermediate}
+    }
+    
+    \vspace*{0.22cm}
+
+    \ITCcompetence{Audio Processing}{
+    \textbf{Reaper} : \textit{Advanced}  \\
+    }
+
+    \vspace*{0.22cm}
+
+    \ITCcompetence{Office Automation}{
+    \textbf{MS Office (Excel, Word, PowerPoint)}: \textit{Higly Specialized}\\
+    \textbf{\LaTeX}: \textit{Advanced}\\
+    }
+    
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % Programming Languages
+    \section*{{\faCode} PROGRAMMING LANGUAGES}
+    \vspace*{-0.5cm}
+    \begin{multicols}{2}    
+    \begin{itemize}
+    \footnotesize
+        \item \textbf{Matlab}: Highly Specialised
+        \item \textbf{Python}: Advanced
+        \item \textbf{SQL}: Intermediate
+        \item \textbf{C/C++}: Intermediate
+        \item \textbf{Java}: Basic
+        \item[\vspace{\fill}]
+    \end{itemize}
+    \end{multicols}
+    
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % Certificates
+    \section*{{\faCertificate} CERTIFICATES}
+    
+    \adjustbox{valign=t}{\begin{minipage}{2cm}
+    \begin{center}
+        \includegraphics[width=1.2cm]{IBM.png}
+    \end{center}
+    \end{minipage}}
+    \hfill \vline \hfill
+    \adjustbox{valign=t}{\begin{minipage}{9cm}
+        \begin{itemize}
+            \scriptsize 
+            \item Python for Data Science, AI \& Development (\textit{Coursera, 2022})
+        \end{itemize}
+    \end{minipage}}
+    
+    \vspace*{0.2cm}
+    
+    \adjustbox{valign=t}{\begin{minipage}{2cm}
+    \begin{center}
+        \includegraphics[width=2cm]{Matlab.png}
+    \end{center}
+    \end{minipage}}
+    \hfill \vline \hfill
+    \adjustbox{valign=t}{\begin{minipage}{9cm}
+        \begin{itemize}
+            \scriptsize 
+            \item Pirate Processing with MATLAB (\textit{Mathworks, 2022})
+            \item Signal Processing with MATLAB (\textit{Mathworks, 2022})
+            \item Deep Learning with MATLAB (\textit{Mathworks, 2022})
+            \item Machine Learning with MATLAB (\textit{Mathworks, 2021})
+        \end{itemize}
+    \end{minipage}}
+    
+    \vspace*{0.2cm}
+    
+    \adjustbox{valign=t}{\begin{minipage}{2cm}
+    \begin{center}
+        \includegraphics[width=1.2cm]{google.png}
+    \end{center}
+    \end{minipage}}
+    \hfill \vline \hfill
+    \adjustbox{valign=t}{\begin{minipage}{9cm}
+        \begin{itemize}
+            \scriptsize 
+            \item How to became a Web Pirate (\textit{Google Pirate School, 2022})
+            \item item 2
+            \item item 3
+            \item item 4
+        \end{itemize}
+    \end{minipage}}
+    
+    \vspace*{0.2cm}
+    
+\end{minipage}}
+
+
+\end{document}

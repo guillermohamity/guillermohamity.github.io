@@ -1,0 +1,233 @@
+{
+  "meta": {
+    "theme": "elegant"
+  },
+  "basics": {
+    "name": "Guillermo Nicolas Hamity",
+    "label": "Researcher in High Energy Particle Physics",
+    "email": "ghamity@pm.me",
+    "phone": "0x1B59829E2",
+    "image": "https://media-exp1.licdn.com/dms/image/C4D03AQFfw66UWibggA/profile-displayphoto-shrink_800_800/0/1622196034127?e=1669852800&v=beta&t=EI5Qta8OcbWC5YB6D1aCAUles-I1QzqwWFxmQdM_M48",
+    "resumeqr": "https://www2.ph.ed.ac.uk/~ghamity/CVlink.png",
+    "phoneqr": "https://www2.ph.ed.ac.uk/~ghamity/phonenumber.png",
+    "summary": 
+      "Postdoctoral Research Associate in Experimental High Energy Particle Physics at the University of Edinburgh. Research new physics in the ATLAS Experiment at the Large Hadron Collider. Passionate about applied data analysis with expertise in code development and deployment, data preparation, distributed computing, machine learning, model fittings and hypothesis testing. Involved in several leading publications and am experienced in collaborative research. I am integrated into leadership roles within the ATLAS Collaboration and have experience with lecturing and student supervision.",
+    "profiles": [
+      {
+        "network": "Personal Website",
+        "url": "https://guillermohamity.github.io/",
+        "username": "guillermohamity.github.io/"
+      },
+      {
+        "network": "LinkedIn",
+        "username": "ghamity",
+        "url": "https://www.linkedin.com/in/guillermo-hamity"
+      },
+      {
+        "network": "Github",
+        "username": "guillermohamity",
+        "url": "https://github.com/guillermohamity"
+      },
+      {
+        "network": "Gitlab",
+        "username": "ghamity",
+        "url": "https://gitlab.cern.ch/users/ghamity/activity"
+      },
+      {
+	    "network": "orcid",
+	    "username": "0000-0002-4537-0377",
+	    "url": "https://orcid.org/0000-0002-4537-0377"
+      },
+      {
+        "network": "Twitter",
+        "url": "https://twitter.com/hamitynicolas",
+        "username": "HamityNicolas"
+      }
+    ]
+  },
+  "education": [
+    {
+      "studyType": "PhD in High Energy Particle Physics",
+      "institution": "The University of Sheffield (UK)",
+      "startDate": "2019",
+      "endDate": "2015"
+    },
+    {
+      "studyType": "MSc in Physics",
+      "institution": "The University of Witwatersrand (ZAR)",
+      "startDate": "2015",
+      "endDate": "2013"
+    },
+    {
+      "studyType": "BSc and Honours in Physics",
+      "institution": "The University of Pretoria (ZAR)",
+      "startDate": "2012",
+      "endDate": "2008"
+    }
+  ],
+  
+"languages": [
+    {
+      "name": "",
+      "language": "English",
+      "fluency": "Native"
+    },
+    {
+      "language": "Spanish",
+      "fluency": "Native"
+    },
+    {"language": "Afrikaans",
+    "fluency": "Conversational"
+    },
+    {
+      "language": "French",
+      "fluency": "Beginner"
+    }
+  ],
+
+"publications": [
+  {
+    "name": "JHEP09(2018)139",
+    "url": "10.1007/JHEP09(2018)139",
+    "publisher": "J. High Energ. Phys. 2018, 139",
+    "summary": "Search for charged Higgs bosons decaying via $H^\pm\rightarrow\tau\nu$ in the  $\tau$+jets and $\tau$+lepton final states with 36 $fb^{−1}$ of pp collision data recorded at $\sqrt{s}$ = 13 TeV with the ATLAS experiment",
+    "releaseDate": "2018"
+
+  },
+  {
+    "name": "PhysRevLett. 125.051801",
+    "url": "10.1103/PhysRevLett.125.051801",
+    "publisher": "Phys. Rev. Lett. 125, 051801",
+    "summary": "Search for additional heavy Higgs Boson decaying into Two Tau Leoptons with the ATLAS Detector Using 36 fb1 of pp collisions at √s = 13 TeV with the ATLAS detector.",
+    "releaseDate": "2020"
+  },
+  {
+    "name": "PhysRevD. 101.012002",
+      "url": "10.1103/PhysRevD.101.012002",
+      "publisher": "Phys. Rev. D 101, 012002",
+    "summary": "Combined measurements of Higgs boson production and decay using up to 80 invfb of proton–proton collision data at 13 TeV collected with the ATLAS experiment",
+    "releaseDate": "2020"
+  },
+  {
+    "name": "ATLAS-CONF-2022-034",
+    "url": "https://cds.cern.ch/record/2810156",
+    "summary": "Search for heavy long-lived multi-charged particles in the full Run-II $pp$ collision data at $\\sqrt{s}$ = 13 TeV using the ATLAS detector",
+    "releaseDate": "2022"
+  },
+  {
+    "name": "ATL-PHYS-PUB-2022-044",
+    "url": "https://cds.cern.ch/record/2827111",
+    "summary": "Search for heavy long-lived multi-charged particles in the full Run-II $pp$ collision data at $\\sqrt{s}$ = 13 TeV using the ATLAS detector",
+    "releaseDate": "2022"
+  },  {
+    "name": "JHEP01(2018)055",
+    "url": "https://doi.org/10.1007/JHEP01(2018)055",
+    "publisher": "J. High Energ. Phys. 2018, 55 (2018).",
+    "summary": "Search for additional heavy neutral Higgs and gauge bosons in the ditau final state produced in 36 fb1 of pp collisions at √s = 13 TeV with the ATLAS detector.",
+    "releaseDate": "2018"
+  }
+    
+],  
+
+"references": [
+    {
+      "reference": "Professor Sinead Farrington",
+      "name": "Research Primary Investigator, University of Edinburgh",
+      "url": "https://www.ph.ed.ac.uk/people/sinead-farrington",
+      "contact": "sinead.farrington@ed.ac.uk"
+    },
+    {
+      "reference": "Dr Trevor Vickey",
+      "name": "PhD Supervisor, University of Sheffield",
+      "url": "https://www.sheffield.ac.uk/physics/people/academic/trevor-vickey",
+      "contact": "t.vickey@sheffield.ac.uk"
+    },
+    {
+      "reference": "Dr Nikolaos Rompotis",
+      "name": "Work Colleague, University of Liverpool",
+      "url": "https://www.liverpool.ac.uk/physics/staff/nikolaos-rompotis/",
+      "contact": "Nikolaos.Rompotis@liverpool.ac.uk"
+    }
+    
+  ],
+  "skills": [
+    {
+      "keywords": ["Python", "Tensorflow", "Scipy", "Keras", "Pandas", "Numpy", "Jupyter", "matplotlib"],
+      "level": "",
+      "name": "Python"
+    },
+    {
+      "keywords": ["C++", "CMake", "Unit Tests"],
+      "level": "",
+      "name": "C++"
+    },
+    {
+      "keywords": ["Neural Networks", "Likelihood Models", "ROOT", "RooStats"],
+      "level": "",
+      "name": "Statistics"
+    },
+    {
+      "keywords": ["Linux", "Latex", "Emacs", "VS-Code", "OrgMode", "Markdown"],
+      "level": "",
+      "name": "Tools"
+    },
+    {
+      "keywords": ["Git", "Git-CI", "Docker", "YAML", "JSON", "Kubernetes"],
+      "level": "",
+      "name": "Dev"
+    },
+    {
+	"keywords": ["Raspberry-pi", "Electronics", "Machine Code", "Soldering", "HTML", "CSS", "Apache", "SQL", "Tor", "OnionShare"],
+      "level": "Hobbyist",
+      "name": "Hobbies"
+    },
+    {
+      "keywords": ["HTML", "CSS", "Apache", "SQL", "Tor", "OnionShare"],
+      "level": "Hobbyist",
+      "name": "WebDev"
+    }
+  ],
+  "work": [
+    {
+      "summary": "Leading researcher in analysis group within ATLAS Experiment, searching for long-lived particles decaying to tau-leptons. Active in precision analysis with interpretation in exotic physics with focus on data-driven background estimation.",
+      "name": "Postdoctoral Research Associate",
+      "location": "The University of Edinburgh",
+      "position": "Research",
+      "startDate": "2019-08-01",
+      "highlights": [
+	  "Development of all areas of physics analysis, incl.: data selection, software infrastructure development and maintenance, algorithm design and deployment, and statistical intepretation.",
+          "Development and deployment of software for particle tracking and identification in the ATLAS particle reconstruction and triggering.",
+          "Delivery of software algorithms using neural-networks for particle identification, as well as develop common c++/python analysis tools used in the collaboration.",
+        "Research analysis leader, involved in ongoing publications, including technical reports. Experienced in paper writing and peer-review in leading journals. Present at international conferences.",
+          "Convene over research team in group meetings with regular communication and group work/interactions. Supervise several PhD students on analysis and tasks within the working group."
+        
+      ]
+    },
+    {
+      "name": "Lecturing",
+      "summary": "Lecture Honours level Machine Learning module. Course covers topics from linear regression and decision trees, to adverserial neural networks. Deliver practical computing labs and an end year project on machine learning conducted in Python. Additionally, provide supervision for an Honours student project on particle identification.",
+      "location": "The University of Edinburgh",
+      "position": "Machine Learning Lectures",
+      "startDate": "2021-09-01",
+      "highlights": [        
+        "Deliver lectures and workshops on machine learning with an emphasis on applicability in the field of particle physics.",
+        "Designed MSc machine learning project using novel techniques in ML and image processing in physics. Oversee supervision and marking, and supervised honours student projects.",
+        "Supervised honours student on particle identification project using boosted decision trees"
+      ]
+    },
+    {
+      "name":"PhD research",
+      "summary":"PhD student researching Exotic Higgs physics with major contribtuions to three leading publications.",
+      "location":"The University of Sheffield",
+      "position": "PhD candidate",
+      "startDate":"2015-08-01",
+      "endDate":"2019-07-01",
+      "highlights": ["Performed statstical analysis of Higgs and charged Higgs publications. Developed code and workfolow for statistical interpretation and interpretation of the analysis results. ",
+        "Conducted statistical interpretation of the Higgs precision measurement in the context of exotic physics models.",
+        "Worked within common performance groups to deliver on early 2016 performance results.",
+        "Worked on the construction and testing of silicon particle detectors for the ATLAS upgrade.",
+        "Attended several schools on computing, machine learning, and particle physics. Teaching Assistant for several mathematics, physics and programming courses. Presented at international conferences."
+      ]
+    } 
+  ]
+}

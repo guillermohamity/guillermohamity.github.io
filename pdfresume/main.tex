@@ -1,0 +1,439 @@
+% Preamble
+% Compile with XeLateX
+
+\documentclass[11 pt,oneside,a4paper,titlepage]{article}
+\usepackage{preamble}
+\usepackage{luacode}
+\usepackage{mathtools}
+\newcommand{\json}[1]{\directlua{tex.print(table#1)}}
+\graphicspath{{PIC/}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+% load json file
+\begin{luacode}
+function read(file)
+    local handler = io.open(file, "rb")
+    local content = handler:read("*all")
+    handler:close()
+    return content
+end
+JSON = (loadfile "JSON.lua")()
+table = JSON:decode(read("resume.json"))
+\end{luacode}
+
+
+\sidebar{sideBarColor!25}
+\simpleheader{titleBackColor}{Guillermo}{Hamity}{Researcher | PhD in Particle Physics}{white}
+
+% Start Minipages
+\vspace*{2.5cm}% start 8 cm from the top of the page}
+    \adjustbox{valign=t}{\begin{minipage}{5.4cm} % large 7.4 cm from the top
+    \vspace*{1.2cm} % text starts 1cm under the top of the minipage
+            
+        % Picture
+        \begin{center}
+        \begin{tikzpicture}
+            \node[
+            circle,
+            minimum size=\cvPictureWidth,
+            path picture={
+            \node at (path picture bounding box.center){
+             \includegraphics[width=\cvPictureWidth]{profile.jpeg}
+             };
+             }]
+            {};
+        \end{tikzpicture}
+        \end{center}
+        
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        % Contact Section
+        \ruleline{\textbf{Contact}}
+        \begin{tikzpicture}[every node/.style={inner sep=0pt, outer sep=0pt}]
+        \matrix [
+        column 1/.style={anchor=center,contactIcon},
+        column 2/.style={anchor=west,align=left,contactIcon},
+        column sep=5pt,
+        row sep=5pt] (contact) {
+        \node{\faMale};
+        & \node{\href{\json{['basics']['profiles'][1]['url']}}{\json{['basics']['profiles'][1]['username']}}};\\
+        \node{\faEnvelope}; 
+         & \node{\href{mailto:\directlua{tex.print(table['basics']['email'])}}{\directlua{tex.print(table['basics']['email'])}}};\\
+         \node{\faEnvelopeO}; 
+         & \node{\href{mailto:guillermo.nicolas.hamity@cern.ch}{guillermo.hamity@cern.ch}};\\
+        \node{\faPhone}; 
+         & \node{\directlua{tex.print(table['basics']['phone'])}};\\ 
+        \node{\faMapMarker}; 
+        & \node{Office 3404\\ JCMB, Kings Buildings\\ University of Edinburgh\\EH9 3FD, Scotland, UK};\\
+        \node{\faLinkedinSquare}; 
+        & \node{\href{\json{['basics']['profiles'][2]['url']}}{\json{['basics']['profiles'][2]['username']}}};\\
+        \node{\faGithub}; 
+        & \node{\href{\json{['basics']['profiles'][3]['url']}}{\json{['basics']['profiles'][3]['username']}}};\\
+        \node{\faGitlab}; 
+        & \node{\href{\json{['basics']['profiles'][4]['url']}}{\json{['basics']['profiles'][4]['username']}}};\\
+        \node{\aiOrcid}; 
+        & \node{\href{\json{['basics']['profiles'][5]['url']}}{ORCID: \json{['basics']['profiles'][5]['username']}}};\\
+        \node{\faTwitter}; 
+        & \node{\href{\json{['basics']['profiles'][6]['url']}}{\json{['basics']['profiles'][6]['username']}}};\\
+         };
+        \end{tikzpicture} 
+        
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        \ruleline{\textbf{Languages}}
+        \begin{tikzpicture}[every node/.style={inner sep=0pt, outer sep=0pt}]
+        \matrix [
+        column 1/.style={anchor=center,contactIcon},
+        column 2/.style={anchor=west,align=left,contactIcon},
+        column sep=5pt,
+        row sep=5pt] (contact) {
+        \node{\flag{England.png}};
+        & \node{\json{['languages'][1]['language']} -- \json{['languages'][1]['fluency']}};\\
+        \node{\flag{argentina.png}};
+        & \node{\json{['languages'][2]['language']} -- \json{['languages'][2]['fluency']}};\\
+        \node{\flag{ZAR.png}};
+        & \node{\json{['languages'][3]['language']} -- \json{['languages'][3]['fluency']}};\\
+        \node{\flag{France.png}};
+        & \node{\json{['languages'][4]['language']} -- \json{['languages'][4]['fluency']}};\\
+        };
+        \end{tikzpicture} 
+        
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        % QR Code
+        \begin{center}
+            \includegraphics[width=3.5cm]{QR_Info.png}
+        \end{center}
+        
+    \end{minipage}} %
+    \hfill 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% MAIN SECTION %%%%%%%%%%%%%%%%%%%%
+    \adjustbox{valign=t}{\begin{minipage}{13.3cm}
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        % Profile section
+        \vspace*{1cm}
+        \ruleline{\textbf{About me}}
+        \json{['basics']['summary']}
+        \vspace*{.1cm}
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        % Work Experience
+        \section*{{\faSuitcase} WORK EXPERIENCE}
+        \vspace*{0.22cm}
+        \MySectionNoLoc{\json{['work'][1]['startDate']}\\Ongoing}{ued-blackonwhite.png}{\json{['work'][1]['name']}}{ATLAS Experiment}{\json{['work'][1]['location']}}{\json{['work'][1]['position']}}{\json{['work'][1]['summary']}}
+                  \small{\emph{Research}}
+                  \footnotesize{
+                    \begin{itemize}
+                    \item \json{['work'][1]['highlights'][1]}
+                    \item \json{['work'][1]['highlights'][2]}
+                    \item \json{['work'][1]['highlights'][3]}
+                    \item \json{['work'][1]['highlights'][4]}
+                    \item \json{['work'][1]['highlights'][5]}
+                    \end{itemize}
+                  }
+                  \small{\emph{Lecturing}}
+                  \footnotesize{
+                    \begin{itemize}
+                    \item \json{['work'][2]['highlights'][1]}
+                    \item \json{['work'][2]['highlights'][2]}
+                    %\item \json{['work'][2]['highlights'][3]}
+                    \end{itemize}
+                  }
+        \vspace*{0.22cm}                        
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % Education
+  
+        \section*{{\faGraduationCap} EDUCATION}
+        \MySectionNoLoc{\json{['work'][3]['startDate']}\\\json{['work'][3]['endDate']}}{shef.png}{\json{['work'][3]['name']}}{ATLAS Experiment}{\json{['work'][3]['location']}}{\json{['work'][3]['position']}}{\href{https://etheses.whiterose.ac.uk/25836/1/thesis_final.pdf}{\emph{Thesis:} Probing the Beyond the Standard Model Higgs Sector using the ATLAS Detector}}%\json{['work'][3]['summary']}
+                  \footnotesize{
+                    \begin{itemize}
+                    \item \json{['work'][3]['highlights'][1]}
+                    \item \json{['work'][3]['highlights'][2]}
+                    \item \json{['work'][3]['highlights'][3]}
+                    \item \json{['work'][3]['highlights'][4]}
+                    \item \json{['work'][3]['highlights'][5]}
+                    \end{itemize}
+                  }
+        \vspace*{0.22cm}
+        \MySectionNoFill{\json{['education'][2]['endDate']}--\json{['education'][2]['startDate']}}{}{\json{['education'][2]['studyType']}}{}{\json{['education'][2]['institution']}}{}{}}
+        \vspace*{0.22cm}
+
+        \MySectionNoFill{\json{['education'][3]['endDate']}--\json{['education'][3]['startDate']}}{}{\json{['education'][3]['studyType']}}{}{\json{['education'][3]['institution']}}{}{}}
+        %% \MySection{2018-Ongoing}{Ship.png}{Master Degree}{Pirate University}{Tortuga, Caribbean}{Faculty}{A description of your piracy. \\\textbf{Degree: 110/110 cum laude}}
+            
+        \vspace*{0.22cm}
+            
+        %% \MySection{2016-2018}{Jolly-Roger.png}{Bachelor Degree}{Tortuga Academy}{East Indies}{Buccaneer}{Attacking and robbing ships at sea. \lipsum[150]\\\textbf{Degree: 110/110}}
+    \end{minipage}} %
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Second Page
+\newpage
+
+\sidebar{sideBarColor!25}
+\newpageheader{titleBackColor}{Guillermo}{Hamity}{Data Science \faLightbulbO \hspace{1mm} Research}{white}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% SIDEBAR %%%%%%%%%%%%%%%%%%%
+\adjustbox{valign=t}{%
+\begin{minipage}{5.3cm} 
+\vspace*{0.4cm} % text starts 0.4cm under the top the header
+        
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % Professional Skills 
+    \ruleline{\textbf{Professional Skills}}
+    \ruleline{\json{['skills'][1]['name']}}
+    \begin{center}
+        \cvtag{\json{['skills'][1]['keywords'][2]}}
+        \cvtag{\json{['skills'][1]['keywords'][3]}}
+        \cvtag{\json{['skills'][1]['keywords'][4]}}
+        \cvtag{\json{['skills'][1]['keywords'][5]}}
+        \cvtag{\json{['skills'][1]['keywords'][6]}}
+        \cvtag{\json{['skills'][1]['keywords'][7]}}
+        \cvtag{\json{['skills'][1]['keywords'][8]}}        
+    \end{center}
+    \ruleline{\json{['skills'][2]['name']}}
+    \begin{center}
+        \cvtag{\json{['skills'][2]['keywords'][1]}}
+        \cvtag{\json{['skills'][2]['keywords'][2]}}
+        \cvtag{\json{['skills'][2]['keywords'][3]}}
+    \end{center}
+    \ruleline{\json{['skills'][3]['name']}}
+    \begin{center}
+        \cvtag{\json{['skills'][3]['keywords'][1]}}
+        \cvtag{\json{['skills'][3]['keywords'][2]}}
+        \cvtag{\json{['skills'][3]['keywords'][3]}}
+        \cvtag{\json{['skills'][3]['keywords'][4]}}
+    \end{center}
+    \ruleline{\json{['skills'][4]['name']}}
+    \begin{center}
+        \cvtag{\json{['skills'][4]['keywords'][1]}}
+        \cvtag{\json{['skills'][4]['keywords'][2]}}
+        \cvtag{\json{['skills'][4]['keywords'][3]}}
+        \cvtag{\json{['skills'][4]['keywords'][4]}}
+        \cvtag{\json{['skills'][4]['keywords'][5]}}
+        \cvtag{\json{['skills'][4]['keywords'][6]}}
+    \end{center}
+    \ruleline{\json{['skills'][5]['name']}}
+    \begin{center}
+        \cvtag{\json{['skills'][5]['keywords'][1]}}
+        \cvtag{\json{['skills'][5]['keywords'][2]}}
+        \cvtag{\json{['skills'][5]['keywords'][3]}}
+        \cvtag{\json{['skills'][5]['keywords'][4]}}
+        \cvtag{\json{['skills'][5]['keywords'][5]}}
+        \cvtag{\json{['skills'][5]['keywords'][6]}}
+    \end{center}
+    \ruleline{\json{['skills'][6]['name']}}
+    \begin{center}
+        \cvtag{\json{['skills'][6]['keywords'][1]}}
+        \cvtag{\json{['skills'][6]['keywords'][2]}}
+        \cvtag{\json{['skills'][6]['keywords'][3]}}
+        \cvtag{\json{['skills'][6]['keywords'][4]}}
+        \cvtag{\json{['skills'][6]['keywords'][5]}}
+        \cvtag{\json{['skills'][6]['keywords'][6]}}
+        \cvtag{\json{['skills'][6]['keywords'][7]}}
+        \cvtag{\json{['skills'][6]['keywords'][8]}}        
+        \cvtag{\json{['skills'][6]['keywords'][10]}}        
+        \cvtag{\json{['skills'][6]['keywords'][9]}}        
+    \end{center}
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % Skill and Strengths 
+    %% \ruleline{\textbf{Soft Skills and Strengths}}
+    %% \vspace*{-0.5cm}
+    %% \begin{center}
+    %%     \cvtag{Creativity}\cvtag{Curiosity}\cvtag{Flexibility}\cvtag{Self Confidence}\cvtag{Ability to Plan and Organize} \cvtag{Autonomy}\cvtag{Adaptability} \cvtag{Eye for Details}\cvtag{Problem Solving}\cvtag{Team Working}\cvtag{Love Learning New Things}\cvtag{Leadership}\cvtag{Good Communication}\cvtag{Managing Information}\cvtag{Diplomacy}\cvtag{Good Listener}\cvtag{Patience}
+    %% \end{center}
+
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % Other Interests
+    %% \ruleline{\textbf{Other Interests}}
+    %% \small
+    %% \begin{multicols}{2}
+    %%     \begin{itemize} 
+    %%         \item  Guitar \flag{Guitar.png}
+    %%         \item  Piano \flag{Piano.png}
+    %%         \item  Chess \flag{Chess.png}
+    %%         \item  Gym \flag{Gym.png}
+    %%         \item  Travels \flag{Travels.png}
+    %%         \item  Movies \flag{movie2.png}
+    %%         \item  Books \flag{Books.png}
+    %% \end{itemize}
+    %% \end{multicols}
+
+     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        % QR Code
+        \ruleline{\textbf{Download My CV}}
+        \scriptsize
+        \centering
+        Download my CV via the QR below \aiOverleaf.
+        \begin{center}
+            \quad
+            \qrcode[height=2cm]{
+                https://www2.ph.ed.ac.uk/~ghamity/CVlink.png} \\
+            \vspace*{0.5cm}
+        \end{center}
+
+\end{minipage}
+}%
+\hfill
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% MAIN %%%%%%%%%%%%%%%%%%%%%%%%%
+\adjustbox{valign=t}{%
+\begin{minipage}{13.3cm}
+  \vspace*{0.4cm}                
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % Peer Reviews
+    \section*{{\faComments} CONFERENCES AND TRAINING}
+    \footnotesize Attended the following training courses/schools: 
+    \begin{itemize}
+        \footnotesize
+         \item{\href{https://indico.cern.ch/event/1172498/timetable/?view=standard}{\textbf{5th HEP C++ Course and Hands-on Training - Advanced C++}}, CERN, 11-13 Oct 2022}
+         \item{\href{https://indico.cern.ch/event/946584/timetable/?view=standard}{\textbf{1st HEP C++ Course and Hands-on Training}}, CERN, 12-16 Oct 2020}
+         \item{\href{https://indico.cern.ch/event/854880/timetable/?view=standard}{\textbf{Analysis Preservation Bootcamp -- GitLab CI/CD and Docker Fundamentals}}, CERN, 17-19 Feb 2020}
+         \item{\href{https://indico.cern.ch/event/687473/timetable/?view=standard}{\textbf{Fourth Machine Learning in High Energy Physics Summer School 2018}}, University of Oxford, 6-12 Aug 2018 }
+         \item{\href{https://indico.cern.ch/event/614672/timetable/?view=standard}{\textbf{2017 European School of High-Energy Physics}}, Evora Portugal, 6-19 Sept 2017}
+         \item{\href{https://indico.cern.ch/event/558879/}{\textbf{2016 HEP School for Experimental High Energy Physics Students}}, University of Lancaster, 4-15 Sept 2016}
+    \end{itemize}
+    and presented at these international conferences
+    \begin{itemize}
+    \item \href{https://moriond.in2p3.fr/2022/QCD/Program.html}{\textbf{56th Rencontres de Moriond on QCD and High Energy Interactions}}, \emph{Exotic Higgs at ATLAS and CMS}, La Thuile Italy, 19-26 March, 2022 
+    \item \href{https://indico.cern.ch/event/736911/}{\textbf{21st High-Energy Physics International Conference In QCD}}, \emph{Higgs boson cross-section measurements at ATLAS}, Montpellier Fr , 2-6 July 2018 
+    \item \href{https://indico.cern.ch/event/352528/}{\textbf{ Kruger 2014: Workshop on Discovery Physics at the LHC }}, \emph{Beyond-the-Standard Model Higgs physics using the ATLAS experiment}, South Africa , 26 Nov, 2014 
+    \end{itemize}
+     and dozens of internal workshops and conferences over the years.
+    %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    %% % Information Technology Skills
+    %% \section*{{\faDesktop} INFORMATION TECHNOLOGY SKILLS}
+    
+    %% \ITCcompetence{Data Analysis}{
+    %% \textbf{MATLAB}: \textit{Higly Specialized}\\
+    %% \textbf{Wolfram Mathematica}: \textit{Intermediate}\\
+    %% \textbf{Jupiter Notebook}: \textit{Intermediate}\\
+    %% }
+    
+    %% \vspace*{0.22cm}
+
+    %% \ITCcompetence{Modeling and Simulation}{
+    %% \textbf{Simulink} : \textit{Intermediate}  \\
+    %% \textbf{LTSpice}: \textit{Intermediate}
+    %% }
+    
+    %% \vspace*{0.22cm}
+
+    %% \ITCcompetence{Audio Processing}{
+    %% \textbf{Reaper} : \textit{Advanced}  \\
+    %% }
+
+    %% \vspace*{0.22cm}
+
+    %% \ITCcompetence{Office Automation}{
+    %% \textbf{MS Office (Excel, Word, PowerPoint)}: \textit{Higly Specialized}\\
+    %% \textbf{\LaTeX}: \textit{Advanced}\\
+    %% }
+    
+    %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    %% % Programming Languages
+    %% \section*{{\faCode} PROGRAMMING LANGUAGES}
+    %% \vspace*{-0.5cm}
+    %% \begin{multicols}{2}    
+    %% \begin{itemize}
+    %% \footnotesize
+    %%     \item \textbf{Matlab}: Highly Specialised
+    %%     \item \textbf{Python}: Advanced
+    %%     \item \textbf{SQL}: Intermediate
+    %%     \item \textbf{C/C++}: Intermediate
+    %%     \item \textbf{Java}: Basic
+    %%     \item[\vspace{\fill}]
+    %% \end{itemize}
+    %% \end{multicols}
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        % Publications
+        \section*{{\faBook} RECENT PUBLICATIONS}
+            
+            
+        \vspace*{0.22cm}
+                         
+        \publication{\json{['publications'][2]['name']}}{\json{['publications'][2]['releaseDate']}}{Search for Heavy Higgs Boson decaying into Two Tau Leoptons with the ATLAS Detector Using $pp$ pp collisions at $\sqrt{s}$ = 13 TeV}{\json{['publications'][2]['publisher']}}{ATLAS}{\json{['publications'][2]['url']}}
+            
+        \vspace*{0.22cm}
+        \publication{\json{['publications'][3]['name']}}{\json{['publications'][3]['releaseDate']}}{Combined measurements of Higgs boson production and decay using up to 80 $fb^{-1}$ of proton–proton collision data at 13 TeV collected with the ATLAS experiment}{\json{['publications'][3]['publisher']}}{ATLAS}{\json{['publications'][3]['url']}}
+            
+        \vspace*{0.22cm}
+            
+        \publication{\json{['publications'][1]['name']}}{\json{['publications'][1]['releaseDate']}}{Search for charged Higgs bosons decaying via $H^\pm\rightarrow\tau\nu$ in the  $\tau$+jets and $\tau$+lepton final states with 36 $fb^{−1}$ of pp collision data recorded at $\sqrt{s}$ = 13 TeV with the ATLAS experiment}{\json{['publications'][1]['publisher']}}{ATLAS}{\json{['publications'][1]['url']}}
+        \vspace*{0.22cm}
+            
+        \publicationconf{\json{['publications'][4]['name']}}{\json{['publications'][4]['releaseDate']}}{Search for heavy long-lived multi-charged particles in the full Run-II $pp$ collision data at $\sqrt{s}$ = 13 TeV using the ATLAS detector}{ATLAS}{\json{['publications'][4]['url']}}
+        \vspace*{0.22cm}
+        \publicationconf{\json{['publications'][5]['name']}}{\json{['publications'][5]['releaseDate']}}{Reconstruction, Identification, and Calibration of hadronically decaying tau leptons with the ATLAS detector for the LHC Run 3 and reprocessed Run 2 data}{ATLAS}{\json{['publications'][5]['url']}}
+    
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % Certificates
+        \section*{{\faCertificate} REFERENCES}
+        \emph{\json{['references'][1]['reference']}} \hspace{1em} \href{  \json{['references'][1]['url']}}{Website},\hfill      \href{  mailto:\json{['references'][1]['contact']}}{\json{['references'][1]['contact']}}
+            \begin{itemize}
+            \item \textit{\json{['references'][1]['name']}}
+            \end{itemize}
+        \emph{\json{['references'][2]['reference']}} \hspace{1em} \href{  \json{['references'][2]['url']}}{Website},\hfill      \href{  mailto:\json{['references'][2]['contact']}}{\json{['references'][2]['contact']}}
+            \begin{itemize}
+            \item \textit{\json{['references'][2]['name']}}
+            \end{itemize}
+        \emph{\json{['references'][3]['reference']}} \hspace{1em} \href{  \json{['references'][3]['url']}}{Website},\hfill      \href{  mailto:\json{['references'][3]['contact']}}{\json{['references'][3]['contact']}}
+            \begin{itemize}
+            \item \textit{\json{['references'][3]['name']}}
+            \end{itemize}
+                
+    %% \adjustbox{valign=t}{\begin{minipage}{2cm}
+    %% \begin{center}
+    %%     \includegraphics[width=1.2cm]{IBM.png}
+    %% \end{center}
+    %% \end{minipage}}
+    %% \hfill \vline \hfill
+    %% \adjustbox{valign=t}{\begin{minipage}{9cm}
+    %%     \begin{itemize}
+    %%         \scriptsize 
+    %%         \item Python for Data Science, AI \& Development (\textit{Coursera, 2022})
+    %%     \end{itemize}
+    %% \end{minipage}}
+    
+    %% \vspace*{0.2cm}
+    
+    %% \adjustbox{valign=t}{\begin{minipage}{2cm}
+    %% \begin{center}
+    %%     \includegraphics[width=2cm]{Matlab.png}
+    %% \end{center}
+    %% \end{minipage}}
+    %% \hfill \vline \hfill
+    %% \adjustbox{valign=t}{\begin{minipage}{9cm}
+    %%     \begin{itemize}
+    %%         \scriptsize 
+    %%         \item Pirate Processing with MATLAB (\textit{Mathworks, 2022})
+    %%         \item Signal Processing with MATLAB (\textit{Mathworks, 2022})
+    %%         \item Deep Learning with MATLAB (\textit{Mathworks, 2022})
+    %%         \item Machine Learning with MATLAB (\textit{Mathworks, 2021})
+    %%     \end{itemize}
+    %% \end{minipage}}
+    
+    %% \vspace*{0.2cm}
+    
+    %% \adjustbox{valign=t}{\begin{minipage}{2cm}
+    %% \begin{center}
+    %%     \includegraphics[width=1.2cm]{google.png}
+    %% \end{center}
+    %% \end{minipage}}
+    %% \hfill \vline \hfill
+    %% \adjustbox{valign=t}{\begin{minipage}{9cm}
+    %%     \begin{itemize}
+    %%         \scriptsize 
+    %%         \item How to became a Web Pirate (\textit{Google Pirate School, 2022})
+    %%         \item item 2
+    %%         \item item 3
+    %%         \item item 4
+    %%     \end{itemize}
+    %% \end{minipage}}
+    
+    \vspace*{0.2cm}
+    
+\end{minipage}}
+
+
+\end{document}
