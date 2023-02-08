@@ -210,7 +210,7 @@
     },
     {
       "name": "Lecturing",
-      "summary": "Lecture Honours level Machine Learning module. Course covers topics from linear regression and decision trees, to adverserial neural networks. Deliver practical computing labs and an end year project on machine learning conducted in Python. Additionally, provide supervision for an Honours student project on particle identification.",
+      "summary": "Lecture Honours level Machine Learning module. Course covers topics from linear regression and decision trees, to adversarial neural networks. Deliver practical computing labs and an end year project on machine learning conducted in Python. Additionally, provide supervision for an Honours student project on particle identification.",
       "location": "The University of Edinburgh",
       "position": "Machine Learning Lectures",
       "startDate": "2021-09-01",
