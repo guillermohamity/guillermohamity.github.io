@@ -152,9 +152,9 @@
   ],
   "skills": [
     {
-      "keywords": ["Python", "Tensorflow", "Scipy", "Keras", "Pandas", "Numpy", "Jupyter", "matplotlib"],
+	"keywords": ["Python", "Tensorflow", "Scipy", "Keras", "Pandas", "Numpy", "Jupyter", "matplotlib","valgrind", "CMake", "Unit Tests"],
       "level": "",
-      "name": "Python"
+      "name": "Python/C++"
     },
     {
       "keywords": ["valgrind", "CMake", "Unit Tests"],
@@ -172,12 +172,12 @@
       "name": "Machine Learning"
     },
     {
-	"keywords": ["Git", "Git-CI", "Docker", "YAML/JSON", "Kubernetes","Linux", "Latex", "Emacs", "VS-Code","MSOffice"],
+	"keywords": ["VC", "Git-CI", "Docker", "Kubernetes","Linux/Server", "Distributed Computing","IaC (Terraform)"],
       "level": "",
-      "name": "Tools"
+      "name": "DevOps"
     },
     {
-      "keywords": ["Git", "Git-CI", "Docker", "YAML", "JSON", "Kubernetes"],
+	"keywords": ["VC", "Git-CI", "Docker", "Kubernetes" ,"IaC (Terraform)"],
       "level": "",
       "name": "Dev"
     },
@@ -190,7 +190,12 @@
       "keywords": ["HTML", "CSS", "Apache", "SQL", "Tor", "OnionShare"],
       "level": "Hobbyist",
       "name": "WebDev"
-    }
+    },
+    {
+	"keywords": ["Git", "Git-CI", "Docker", "IaC (Terraform)", "YAML", "JSON", "Kubernetes"],
+      "level": "",
+      "name": "Dev"
+    }    
   ],
   "work": [
     {
