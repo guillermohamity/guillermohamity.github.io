@@ -5,6 +5,24 @@
 \usepackage{preamble}
 \usepackage{luacode}
 \usepackage{mathtools}
+\usepackage{mdframed}
+\usepackage{xcolor}
+% Define the colors for the box and text
+\definecolor{boxcolor}{}{#002366}
+\definecolor{textcolor}{RGB}{240,240,240}
+\definecolor{royalblue(traditional)}{rgb}{0.0, 0.14, 0.4}
+\definecolor{lightblue}{rgb}{0.68, 0.85, 0.9} 
+% Define the blue font color
+\definecolor{palegray}{RGB}{234,234,234}
+\definecolor{chargray}{RGB}{68,68,68}
+
+%\newcommand{\hitext}[1]{\textcolor{textcolor}{\begin{mdframed}[style=mystyle]#1\end{mdframed}}}
+\newcommand{\hitext}[1]{\colorbox{palegray}{{#1}}}
+\newcommand{\hitextbf}[1]{\colorbox{palegray}{\textbf{#1}}}
+% Set the font color to blue
+% Define the red font color
+
+
 \newcommand{\json}[1]{\directlua{tex.print(table#1)}}
 \graphicspath{{PIC/}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -24,7 +42,7 @@ table = JSON:decode(read("resume-short.json"))
 
 
 \sidebar{sideBarColor!25}
-\simpleheader{titleBackColor}{Guillermo}{Hamity}{PhD | Data Engineer | Machine Learning}{white}
+\simpleheader{titleBackColor}{Dr. Guillermo}{Hamity}{PhD | Data Engineer | Machine Learning | Quantitative Research}{white}
 
 % Start Minipages
 \vspace*{1.5cm}% start 8 cm from the top of the page}
@@ -112,7 +130,7 @@ table = JSON:decode(read("resume-short.json"))
         \cvtag{\json{['skills'][1]['keywords'][8]}}        
         \cvtag{\json{['skills'][1]['keywords'][9]}}        
         \cvtag{\json{['skills'][1]['keywords'][10]}}        
-        \cvtag{\json{['skills'][1]['keywords'][11]}}        
+        %%\cvtag{\json{['skills'][1]['keywords'][11]}}        
     \end{center}
     %% \ruleline{\json{['skills'][2]['name']}}
     %% \begin{center}
@@ -167,37 +185,53 @@ table = JSON:decode(read("resume-short.json"))
         % Profile section
         \vspace*{1cm}
         \ruleline{\textbf{About me}}
-        \json{['basics']['summary']}
+        Decade+ in \hitext{\textbf{applied data analysis}} with expertise in \emph{code development and deployment, data preparation, distributed computing, machine learning, and hypothesis testing}.
+        Currently leverage ML for stochastic modelling in sports betting markets. Previously a researcher at the \hitext{\emph{Large Hadron Collider, CERN}}.
+        Involved in leading publications and experienced in \hitextbf{collaborative research} and \textbf{supervision}, held \textbf{leadership} roles within the 3000+ people collaboration,
+        and am an \textbf{efficient independent} worker and clear \textbf{communicator}.
+        %\json{['basics']['summary']}
         \vspace*{.1cm}
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         % Work Experience
         \section*{{\faSuitcase} WORK EXPERIENCE}
         \vspace*{0.22cm}
-        \MySectionNoLoc{\json{['work'][1]['startDate']}\\Ongoing}{ued-blackonwhite.png}{\json{['work'][1]['name']}}{ATLAS Experiment}{\json{['work'][1]['location']}}{\json{['work'][1]['position']}}{\small{\footnotesize{\json{['work'][1]['highlights'][1]}}}}%{\json{['work'][1]['summary']}}
-                  %\small{\emph{Research}}
+        \MySectionNoFill{From Jun. 2023}{}{Quantitative Researcher}{}{PLAYMETECH, London}{}{}}
                   \footnotesize{
                     \begin{itemize}
                     %\item \json{['work'][1]['highlights'][1]}
-                    \item \json{['work'][1]['highlights'][2]}
-                    \item \json{['work'][1]['highlights'][3]}
-                    \item \json{['work'][1]['highlights'][4]}
-                    \item \json{['work'][1]['highlights'][5]}
-                  %%   \end{itemize}
-                  %% }
-                  %% \small{\emph{Lecturing}}
-                  %% \footnotesize{
-                  %%   \begin{itemize}
-                    \item \json{['work'][2]['highlights'][1]}
-                    %% \item \json{['work'][2]['highlights'][2]}
-                    %% %\item \json{['work'][2]['highlights'][3]}
+                    \item Lead the design and deployment \hitext{stochastic models} to predict match and odds in different sports betting markets using a data based approach. 
+                    \item \hitext{Develop ML based strategies} for sports betting with \hitext{{\it{Bayesian} and \it{Reinforcement}\,}} techniques and model their intrinsic risk. Document and communicate strategies transparently. 
+                    \item Create database processing pipelines from several \hitext{SQL and NoSQL} sources.
                     \end{itemize}
                   }
+                  %\small{\emph{Research}}
+        \vspace*{0.22cm}                        
+        \MySectionNoLoc{\json{['work'][1]['startDate']}--\json{['work'][1]['endDate']}}{ued-blackonwhite.png}{\json{['work'][1]['name']}}{ATLAS Experiment}{\json{['work'][1]['location']}}{\json{['work'][1]['position']}}{\small{\footnotesize{\json{['work'][1]['highlights'][1]}}}}%{\json{['work'][1]['summary']}}
+                  %\small{\emph{Research}}
+        \footnotesize{
+          \begin{itemize}
+            %\item \json{['work'][1]['highlights'][1]}
+            
+          \item \hitext{Developed and deployment of software} for particle tracking and identification in the ATLAS collaboration software release.
+          \item Delivered algorithms using \hitextbf{neural-networks} for particle identification, as well as \hitext{develop c++/python} analysis tools with \hitext{widespread use} in the collaboration.
+          \item Have been an \textbf{analysis leader}, involved in ongoing publications, including technical reports. Experienced in paper writing and peer-review in \hitext{leading journals} and at international conferences. Convened research teams with regular interaction and group work. 
+          \item \textbf{Lectured machine learning} MSc course with an emphasis on practical application, covering \textbf{data preparation}, \textbf{regression}, \textbf{classification}, \textbf{decision trees}, \textbf{feature extraction}, and \textbf{neural-networs} (\emph{DNNs, RNNs, CNNs, VAEs, GANs})
+            %%   \end{itemize}
+            %% }
+            %% \small{\emph{Lecturing}}
+            %% \footnotesize{
+            %%   \begin{itemize}
+
+            %% \item \json{['work'][2]['highlights'][2]}
+            %% %\item \json{['work'][2]['highlights'][3]}
+          \end{itemize}
+        }
         \vspace*{0.22cm}                        
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     % Education
   
         \section*{{\faGraduationCap} EDUCATION}
-        \MySectionNoLoc{\json{['work'][3]['startDate']}--\json{['work'][3]['endDate']}}{shef.png}{\json{['work'][3]['name']}}{ATLAS Experiment}{\json{['work'][3]['location']}}{\json{['work'][3]['position']}}{\href{https://etheses.whiterose.ac.uk/25836/1/thesis_final.pdf}{\emph{Thesis:} Probing the Beyond the Standard Model Higgs Sector using the ATLAS Detector}}%\json{['work'][3]['summary']}
+        \MySectionNoLoc{\json{['work'][3]['startDate']}--\json{['work'][3]['endDate']}}{shef.png}{\json{['work'][3]['name']}}{ATLAS Experiment}{\json{['work'][3]['location']}}{\json{['work'][3]['position']}}{\href{https://etheses.whiterose.ac.uk/25836/1/thesis_final.pdf}{\emph{Thesis:} Probing the Beyond Standard Model Higgs Sector using ATLAS}}%\json{['work'][3]['summary']}
                   %% \footnotesize{
                   %%   \begin{itemize}
                   %%   \item \json{['work'][3]['highlights'][1]}
@@ -219,28 +253,28 @@ table = JSON:decode(read("resume-short.json"))
 
         \section*{{\faHeart} HIGHLIGHTS}
         \footnotesize Involved in several publications (full list on request), e.g.\\
-        \vspace*{0.22cm}        
-        \publication{\json{['publications'][2]['name']}}{\json{['publications'][2]['releaseDate']}}{Search for Heavy Higgs Boson decaying into Two Tau Leoptons with the ATLAS Detector Using $pp$ pp collisions at $\sqrt{s}$ = 13 TeV}{\json{['publications'][2]['publisher']}}{ATLAS}{\json{['publications'][2]['url']}}
-        
-    \footnotesize Attended training courses/schools, e.g.: 
-    \begin{itemize}
-        \footnotesize
-         \item{\href{https://indico.cern.ch/event/1172498/timetable/?view=standard}{\textbf{5th HEP C++ Course and Hands-on Training - Advanced C++}}, CERN, 2022}% 11-13 Oct 2022}
-         %% \item{\href{https://indico.cern.ch/event/946584/timetable/?view=standard}{\textbf{1st HEP C++ Course and Hands-on Training}}, CERN, 12-16 Oct 2020}
-         \item{\href{https://indico.cern.ch/event/854880/timetable/?view=standard}{\textbf{GitLab CI/CD and Docker Fundamentals --- Analysis Preservation}}, CERN, 2020}%17-19 Feb 2020}
-         \item{\href{https://indico.cern.ch/event/687473/timetable/?view=standard}{\textbf{Fourth Machine Learning in High Energy Physics Summer School 2018}}, Oxford, 2018}%6-12 Aug 2018 }
-         %% \item{\href{https://indico.cern.ch/event/614672/timetable/?view=standard}{\textbf{2017 European School of High-Energy Physics}}, Evora Portugal, 6-19 Sept 2017}
-         %% \item{\href{https://indico.cern.ch/event/558879/}{\textbf{2016 HEP School for Experimental High Energy Physics Students}}, University of Lancaster, 4-15 Sept 2016}
-    \end{itemize}
-    Presented several international conferences, e.g.
-    \begin{itemize}
-    \item \href{https://moriond.in2p3.fr/2022/QCD/Program.html}{\textbf{56th Rencontres de Moriond on QCD and High Energy Interactions}}, \emph{Exotic Higgs at ATLAS and CMS}, La Thuile Italy, 19-26 March, 2022 
-    %% \item \href{https://indico.cern.ch/event/736911/}{\textbf{21st High-Energy Physics International Conference In QCD}}, \emph{Higgs boson cross-section measurements at ATLAS}, Montpellier Fr , 2-6 July 2018 
-    %% \item \href{https://indico.cern.ch/event/352528/}{\textbf{ Kruger 2014: Workshop on Discovery Physics at the LHC }}, \emph{Beyond-the-Standard Model Higgs physics using the ATLAS experiment}, South Africa , 26 Nov, 201 
-    \end{itemize}
-     and dozens of internal workshops and conferences over the years.\\
-
-     \textbf{Full list of publications, talks and schools upon request}
+        \publication{\json{['publications'][2]['name']}}{}{Search for Heavy Higgs Boson decaying into Two Tau Leptons with the ATLAS Detector Using $pp$ pp collisions at $\sqrt{s}$ = 13 TeV}{2020}{ATLAS}{\json{['publications'][2]['url']}}
+        %\publication{\json{['publications'][2]['name']}}{\json{['publications'][2]['releaseDate']}}{Search for Heavy Higgs Boson decaying into Two Tau Leptons with the ATLAS Detector Using $pp$ pp collisions at $\sqrt{s}$ = 13 TeV}{\json{['publications'][2]['publisher']}}{ATLAS}{\json{['publications'][2]['url']}}        
+        \footnotesize Attended training courses/schools, e.g.: 
+        \begin{itemize}
+          \footnotesize
+        \item{\href{https://indico.cern.ch/event/1172498/timetable/?view=standard}{\textbf{5th HEP C++ Course and Hands-on Training - Advanced C++}}, CERN, 2022}% 11-13 Oct 2022}
+          %% \item{\href{https://indico.cern.ch/event/946584/timetable/?view=standard}{\textbf{1st HEP C++ Course and Hands-on Training}}, CERN, 12-16 Oct 2020}
+        \item{\href{https://indico.cern.ch/event/854880/timetable/?view=standard}{\textbf{GitLab CI/CD and Docker Fundamentals --- Analysis Preservation}}, CERN, 2020}%17-19 Feb 2020}
+        \item{\href{https://indico.cern.ch/event/687473/timetable/?view=standard}{\textbf{Fourth Machine Learning in High Energy Physics Summer School 2018}}, Oxford, 2018}%6-12 Aug 2018 }
+          %% \item{\href{https://indico.cern.ch/event/614672/timetable/?view=standard}{\textbf{2017 European School of High-Energy Physics}}, Evora Portugal, 6-19 Sept 2017}
+          %% \item{\href{https://indico.cern.ch/event/558879/}{\textbf{2016 HEP School for Experimental High Energy Physics Students}}, University of Lancaster, 4-15 Sept 2016}
+        \end{itemize}
+        Presented at several international conferences, e.g.
+        \begin{itemize}
+        \item \href{https://moriond.in2p3.fr/2022/QCD/Program.html}{\textbf{56th Rencontres de Moriond on QCD and High Energy Interactions}}, La Thuile, Italy, 2022 
+        %%\item \href{https://moriond.in2p3.fr/2022/QCD/Program.html}{\textbf{56th Rencontres de Moriond on QCD and High Energy Interactions}}, \emph{Exotic Higgs at ATLAS and CMS}, La Thuile Italy, 19-26 March, 2022 
+          %% \item \href{https://indico.cern.ch/event/736911/}{\textbf{21st High-Energy Physics International Conference In QCD}}, \emph{Higgs boson cross-section measurements at ATLAS}, Montpellier Fr , 2-6 July 2018 
+          %% \item \href{https://indico.cern.ch/event/352528/}{\textbf{ Kruger 2014: Workshop on Discovery Physics at the LHC }}, \emph{Beyond-the-Standard Model Higgs physics using the ATLAS experiment}, South Africa , 26 Nov, 201 
+        \end{itemize}
+        and dozens of internal workshops and conferences over the years.\\
+        \vspace{-0.22cm}
+        \textbf{Full list of publications, talks and schools upon request}
 
         \end{minipage}} %
 

@@ -11,7 +11,7 @@
     "resumeqr": "https://www2.ph.ed.ac.uk/~ghamity/CVlink.png",
     "phoneqr": "https://www2.ph.ed.ac.uk/~ghamity/phonenumber.png",
     "summary": 
-      "Passionate about \\textbf{applied data analysis} with expertise in code development and deployment, data preparation, distributed computing, machine learning, model fittings and hypothesis testing. Currently a researcher in Experimental Particle Physics at the University of Edinburgh searching for new physics at the \\emph{Large Hadron Collider, CERN}. Involved in publications and experienced in \\textbf{collaborative research}. I am integrated into \\textbf{leadership} roles within the 3000+ people international collaboration, am an \\textbf{efficient independent} worker, and have experience with \\textbf{teaching} and \\textbf{supervision}.",
+      "Decade+ in \\textbf{applied data analysis} with expertise in \\emph{code development and deployment, data preparation, distributed computing, machine learning, and hypothesis testing}. Currently leverage ML for stochastic modelling in sports betting markets. Previously a researcher at the \\emph{Large Hadron Collider, CERN}. Involved in leading publications and experienced in \\textbf{collaborative research} and \\textbf{supervision}, held \\textbf{leadership} roles within the 3000+ people collaboration, and am an \\textbf{efficient independent} worker and clear \\textbf{communicator}.",
     "profiles": [
       {
         "network": "Personal Website",
@@ -172,14 +172,14 @@
       "name": "Machine Learning"
     },
     {
-	"keywords": ["VC", "Git-CI", "Docker", "Kubernetes","Linux/Server", "Distributed Computing","IaC (Terraform)"],
+	"keywords": ["AWS","SQL", "Git-CI", "Docker", "Kubernetes", "Linux/Server" ,"MongoDB"],
       "level": "",
-      "name": "DevOps"
+      "name": "Technology"
     },
     {
-	"keywords": ["VC", "Git-CI", "Docker", "Kubernetes" ,"IaC (Terraform)"],
+	"keywords": ["VC", "Git-CI", "Docker", "Kubernetes","Linux/Server", "Distributed Computing","IaC (Terraform)"],
       "level": "",
-      "name": "Dev"
+      "name": "Tech"
     },
     {
 	"keywords": ["Raspberry-pi", "Electronics", "Machine Code", "Soldering", "HTML", "CSS", "Apache", "SQL", "Tor", "OnionShare"],
@@ -203,9 +203,11 @@
       "name": "Postdoctoral Research Associate",
       "location": "The University of Edinburgh",
       "position": "Research",
-      "startDate": "2019-08-01",
+      "startDate": "2019",
+      "endDate": "May 2023",
       "highlights": [
-	  "Active in the development of all areas of physics \\textbf{analysis}, incl.: data preparation, software infrastructure development and maintenance, algorithm design and deployment, and statistical intepretation.",
+	  "Active in the development of all areas of physics \\textbf{analysis}, incl.\\linebreak data preparation, software development/maintenance, algorithm design/deployment, and statistical intepretation.",
+	  "Active in the development of all areas of physics \\textbf{analysis}, incl.\\linebreak data preparation, software infrastructure development and maintenance, algorithm design and deployment, and statistical intepretation.}",
           "\\textbf{Developed software} for particle tracking and identification in particle reconstruction and triggering. \\textbf{Deployed software} in collaboration software release.",
           "Delivered software algorithms using \\textbf{neural-networks} for particle identification, as well as \\textbf{develop c++/python} analysis tools with \\textbf{widespread use in the collaboration}.",
         "Have been an \\textbf{analysis leader}, involved in ongoing publications, including technical reports. Experienced in paper writing and peer-review in \\textbf{leading journals}. Present at international conferences.",
