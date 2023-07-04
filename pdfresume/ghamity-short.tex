@@ -49,20 +49,6 @@ table = JSON:decode(read("resume-short.json"))
     \adjustbox{valign=t}{\begin{minipage}{5.4cm} % large 7.4 cm from the top
     \vspace*{1.2cm} % text starts 1cm under the top of the minipage
             
-        % Picture
-        %% \begin{center}
-        %% \begin{tikzpicture}
-        %%     \node[
-        %%     circle,
-        %%     minimum size=\cvPictureWidth,
-        %%     path picture={
-        %%     \node at (path picture bounding box.center){
-        %%      \includegraphics[width=\cvPictureWidth]{profile.jpeg}
-        %%      };
-        %%      }]
-        %%     {};
-        %% \end{tikzpicture}
-        %% \end{center}
         
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         % Contact Section
@@ -74,26 +60,23 @@ table = JSON:decode(read("resume-short.json"))
         column sep=5pt,
         row sep=5pt] (contact) {
         \node{\faMale};
-        & \node{\href{\json{['basics']['profiles'][1]['url']}}{\json{['basics']['profiles'][1]['username']}}};\\
+        & \node{\href{https://guillermohamity.github.io/}{guillermohamity.github.io/}};\\
         \node{\faEnvelope}; 
-         & \node{\href{mailto:\directlua{tex.print(table['basics']['email'])}}{\directlua{tex.print(table['basics']['email'])}}};\\
-         %% \node{\faEnvelopeO}; 
-         %% & \node{\href{mailto:guillermo.nicolas.hamity@cern.ch}{guillermo.hamity@cern.ch}};\\
+         & \node{\href{mailto:ghamity@pm.me}{ghamity@pm.me}};\\
         \node{\faPhone}; 
-        %& \node{\directlua{tex.print(table['basics']['phone'])}};\\ 
         & \node{073 4161 5586};\\ 
         \node{\faMapMarker}; 
         & \node{Office 3404\\ JCMB, Kings Buildings\\ University of Edinburgh\\EH9 3FD, Scotland, UK};\\
         \node{\faLinkedinSquare}; 
-        & \node{\href{\json{['basics']['profiles'][2]['url']}}{\json{['basics']['profiles'][2]['username']}}};\\
+        & \node{\href{https://www.linkedin.com/in/guillermo-hamity}{ghamity}};\\
         \node{\faGithub}; 
-        & \node{\href{\json{['basics']['profiles'][3]['url']}}{\json{['basics']['profiles'][3]['username']}}};\\
+        & \node{\href{https://github.com/guillermohamity}{guillermohamity}};\\
         \node{\faGitlab}; 
-        & \node{\href{\json{['basics']['profiles'][4]['url']}}{\json{['basics']['profiles'][4]['username']}}};\\
+        & \node{\href{https://gitlab.cern.ch/users/ghamity/activity}{ghamity}};\\
         \node{\aiOrcid}; 
-        & \node{\href{\json{['basics']['profiles'][5]['url']}}{ORCID: \json{['basics']['profiles'][5]['username']}}};\\
+        & \node{\href{https://orcid.org/0000-0002-4537-0377}{ORCID: 0000-0002-4537-0377}};\\
         \node{\faTwitter}; 
-        & \node{\href{\json{['basics']['profiles'][6]['url']}}{\json{['basics']['profiles'][6]['username']}}};\\
+        & \node{\href{https://twitter.com/hamitynicolas}{HamityNicolas}};\\
          };
         \end{tikzpicture} 
         
@@ -106,30 +89,33 @@ table = JSON:decode(read("resume-short.json"))
         column sep=5pt,
         row sep=5pt] (contact) {
         \node{\flag{England.png}};
-        & \node{\json{['languages'][1]['language']} -- \json{['languages'][1]['fluency']}};\\
+        & \node{English -- Native};\\
         \node{\flag{argentina.png}};
-        & \node{\json{['languages'][2]['language']} -- \json{['languages'][2]['fluency']}};\\
+        & \node{Spanish -- Native};\\
         \node{\flag{ZAR.png}};
-        & \node{\json{['languages'][3]['language']} -- \json{['languages'][3]['fluency']}};\\
+        & \node{Afrikaans -- Basic};\\
         \node{\flag{France.png}};
-        & \node{\json{['languages'][4]['language']} -- \json{['languages'][4]['fluency']}};\\
+        & \node{French -- Beginner};\\
         };
         \end{tikzpicture} 
         
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     % Professional Skills 
     \ruleline{\textbf{Professional Skills}}
-    \ruleline{\json{['skills'][1]['name']}}
+    \ruleline{Python/C++}
     \begin{center}
-        \cvtag{\json{['skills'][1]['keywords'][2]}}
-        \cvtag{\json{['skills'][1]['keywords'][3]}}
-        \cvtag{\json{['skills'][1]['keywords'][4]}}
-        \cvtag{\json{['skills'][1]['keywords'][5]}}
-        \cvtag{\json{['skills'][1]['keywords'][6]}}
-        \cvtag{\json{['skills'][1]['keywords'][7]}}
-        \cvtag{\json{['skills'][1]['keywords'][8]}}        
-        \cvtag{\json{['skills'][1]['keywords'][9]}}        
-        \cvtag{\json{['skills'][1]['keywords'][10]}}        
+        \cvtag{Python      }
+        \cvtag{Tensorflow  }
+        \cvtag{Scipy       }
+        \cvtag{Keras       }
+        \cvtag{Pandas      }
+        \cvtag{Numpy       }
+        \cvtag{Jupyter     }        
+        \cvtag{matplotlib  }        
+        \cvtag{pytest      }        
+        \cvtag{valgrind    }        
+        \cvtag{CMake       }        
+        \cvtag{Unit Tests}        
         %%\cvtag{\json{['skills'][1]['keywords'][11]}}        
     \end{center}
     %% \ruleline{\json{['skills'][2]['name']}}
@@ -138,35 +124,39 @@ table = JSON:decode(read("resume-short.json"))
     %%     \cvtag{\json{['skills'][2]['keywords'][2]}}
     %%     \cvtag{\json{['skills'][2]['keywords'][3]}}
     %% \end{center}
-    \ruleline{\json{['skills'][4]['name']}}
+    \ruleline{Machine Learning}
     \begin{center}
         \cvtag{ETL}
-        \cvtag{\json{['skills'][4]['keywords'][1]}}
-        \cvtag{\json{['skills'][4]['keywords'][2]}}
-        \cvtag{\json{['skills'][4]['keywords'][3]}}
-        \cvtag{\json{['skills'][4]['keywords'][4]}}
-        \cvtag{\json{['skills'][4]['keywords'][5]}}
-        \cvtag{\json{['skills'][4]['keywords'][6]}}
+        \cvtag{Feature extraction }
+        \cvtag{Decision Trees               }
+        \cvtag{Ensambles     }
+        \cvtag{Neural Networks    }
+        \cvtag{VAEs/GANs}
+        \cvtag{MDNs}
+        \cvtag{Reinforcement}
     \end{center}
-    \ruleline{\json{['skills'][5]['name']}}
+    
+    \ruleline{Technology}
     \begin{center}
-        \cvtag{\json{['skills'][5]['keywords'][1]}}
-        \cvtag{\json{['skills'][5]['keywords'][2]}}
-        \cvtag{\json{['skills'][5]['keywords'][3]}}
-        \cvtag{\json{['skills'][5]['keywords'][4]}}
-        \cvtag{\json{['skills'][5]['keywords'][5]}}
-        \cvtag{\json{['skills'][5]['keywords'][6]}}
-        \cvtag{\json{['skills'][5]['keywords'][7]}}
+        \cvtag{AWS         }
+        \cvtag{SQL         }
+        \cvtag{Git-CI      }
+        \cvtag{Docker      }
+        \cvtag{Kubernetes  }
+        \cvtag{Linux/Server}
+        \cvtag{MongoDB}
         %% \cvtag{\json{['skills'][5]['keywords'][8]}}
         %% \cvtag{\json{['skills'][5]['keywords'][9]}}
         %\cvtag{\json{['skills'][5]['keywords'][10]}}
     \end{center}
-    \ruleline{\json{['skills'][3]['name']}}
+    \ruleline{Statistics}
     \begin{center}
-        \cvtag{\json{['skills'][3]['keywords'][1]}}
-        \cvtag{\json{['skills'][3]['keywords'][2]}}
-        \cvtag{\json{['skills'][3]['keywords'][3]}}
+        \cvtag{Hypothesis testing}
+        \cvtag{A/B tests}
+        \cvtag{Likelihood models}
         \cvtag{Simulation}
+        \cvtag{Stochastic models}
+        
     \end{center}
         \ruleline{\textbf{Download My CV}}
         \scriptsize
@@ -189,7 +179,6 @@ table = JSON:decode(read("resume-short.json"))
         Currently leverage ML for stochastic modelling in sports betting markets. Previously a researcher at the \hitext{\emph{Large Hadron Collider, CERN}}.
         Involved in leading publications and experienced in \hitextbf{collaborative research} and \textbf{supervision}, held \textbf{leadership} roles within the 3000+ people collaboration,
         and am an \textbf{efficient independent} worker and clear \textbf{communicator}.
-        %\json{['basics']['summary']}
         \vspace*{.1cm}
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         % Work Experience
@@ -199,31 +188,21 @@ table = JSON:decode(read("resume-short.json"))
                   \footnotesize{
                     \begin{itemize}
                     %\item \json{['work'][1]['highlights'][1]}
-                    \item Lead the design and deployment \hitext{stochastic models} to predict match and odds in different sports betting markets using a data based approach. 
+                    \item Lead the design and deployment of \hitext{stochastic models} to predict match and odds in different sports betting markets using a data based approach. 
                     \item \hitext{Develop ML based strategies} for sports betting with \hitext{{\it{Bayesian} and \it{Reinforcement}\,}} techniques and model their intrinsic risk. Document and communicate strategies transparently. 
                     \item Create database processing pipelines from several \hitext{SQL and NoSQL} sources.
                     \end{itemize}
                   }
-                  %\small{\emph{Research}}
         \vspace*{0.22cm}                        
-        \MySectionNoLoc{\json{['work'][1]['startDate']}--\json{['work'][1]['endDate']}}{ued-blackonwhite.png}{\json{['work'][1]['name']}}{ATLAS Experiment}{\json{['work'][1]['location']}}{\json{['work'][1]['position']}}{\small{\footnotesize{\json{['work'][1]['highlights'][1]}}}}%{\json{['work'][1]['summary']}}
-                  %\small{\emph{Research}}
+        \MySectionNoLoc{2019--May 2023}{ued-blackonwhite.png}{Postdoctoral Research Associate}{ATLAS Experiment}{The University of Edinburgh}{Research}{\small{\footnotesize{Active in all areas of physics \textbf{analysis}, incl. data preparation, software development/maintenance, algorithm design/deployment, and statistical intepretation. Responsibilities in \textbf{lecturing}, \textbf{supervising} and \textbf{leadership}.}}}
         \footnotesize{
           \begin{itemize}
-            %\item \json{['work'][1]['highlights'][1]}
             
           \item \hitext{Developed and deployment of software} for particle tracking and identification in the ATLAS collaboration software release.
           \item Delivered algorithms using \hitextbf{neural-networks} for particle identification, as well as \hitext{develop c++/python} analysis tools with \hitext{widespread use} in the collaboration.
           \item Have been an \textbf{analysis leader}, involved in ongoing publications, including technical reports. Experienced in paper writing and peer-review in \hitext{leading journals} and at international conferences. Convened research teams with regular interaction and group work. 
           \item \textbf{Lectured machine learning} MSc course with an emphasis on practical application, covering \textbf{data preparation}, \textbf{regression}, \textbf{classification}, \textbf{decision trees}, \textbf{feature extraction}, and \textbf{neural-networs} (\emph{DNNs, RNNs, CNNs, VAEs, GANs})
-            %%   \end{itemize}
-            %% }
-            %% \small{\emph{Lecturing}}
-            %% \footnotesize{
-            %%   \begin{itemize}
 
-            %% \item \json{['work'][2]['highlights'][2]}
-            %% %\item \json{['work'][2]['highlights'][3]}
           \end{itemize}
         }
         \vspace*{0.22cm}                        
@@ -231,46 +210,29 @@ table = JSON:decode(read("resume-short.json"))
     % Education
   
         \section*{{\faGraduationCap} EDUCATION}
-        \MySectionNoLoc{\json{['work'][3]['startDate']}--\json{['work'][3]['endDate']}}{shef.png}{\json{['work'][3]['name']}}{ATLAS Experiment}{\json{['work'][3]['location']}}{\json{['work'][3]['position']}}{\href{https://etheses.whiterose.ac.uk/25836/1/thesis_final.pdf}{\emph{Thesis:} Probing the Beyond Standard Model Higgs Sector using ATLAS}}%\json{['work'][3]['summary']}
-                  %% \footnotesize{
-                  %%   \begin{itemize}
-                  %%   \item \json{['work'][3]['highlights'][1]}
-                  %%   \item \json{['work'][3]['highlights'][2]}
-                  %%   \item \json{['work'][3]['highlights'][3]}
-                  %%   \item \json{['work'][3]['highlights'][4]}
-                  %%   \item \json{['work'][3]['highlights'][5]}
-                  %%   \end{itemize}
-        %% }
+        \MySectionNoLoc{2015--2019}{shef.png}{PhD in High Energy Physics}{ATLAS Experiment}{The University of Sheffield}{PhD candidate}{\href{https://etheses.whiterose.ac.uk/25836/1/thesis_final.pdf}{\emph{Thesis:} Probing the Beyond Standard Model Higgs Sector using ATLAS}}
         \\\\
-        \MySectionNoFill{\json{['education'][2]['endDate']}--\json{['education'][2]['startDate']}}{}{\json{['education'][2]['studyType']}}{}{\json{['education'][2]['institution']}}{}{}}
+        \MySectionNoFill{2013--2015}{}{MSc in Physics}{}{Uni of Witwatersrand (ZAR)}{}{}}
     \\\\
-        \MySectionNoFill{\json{['education'][3]['endDate']}--\json{['education'][3]['startDate']}}{}{\json{['education'][3]['studyType']}}{}{\json{['education'][3]['institution']}}{}{}}
-        %% \MySection{2018-Ongoing}{Ship.png}{Master Degree}{Pirate University}{Tortuga, Caribbean}{Faculty}{A description of your piracy. \\\textbf{Degree: 110/110 cum laude}}
+        \MySectionNoFill{2008--2012}{}{BSc and Honours in Physics}{}{The University of Pretoria (ZAR)}{}{}}
             
         \vspace*{0.22cm}
             
-        %% \MySection{2016-2018}{Jolly-Roger.png}{Bachelor Degree}{Tortuga Academy}{East Indies}{Buccaneer}{Attacking and robbing ships at sea. \lipsum[150]\\\textbf{Degree: 110/110}}
 
         \section*{{\faHeart} HIGHLIGHTS}
         \footnotesize Involved in several publications (full list on request), e.g.\\
-        \publication{\json{['publications'][2]['name']}}{}{Search for Heavy Higgs Boson decaying into Two Tau Leptons with the ATLAS Detector Using $pp$ pp collisions at $\sqrt{s}$ = 13 TeV}{2020}{ATLAS}{\json{['publications'][2]['url']}}
-        %\publication{\json{['publications'][2]['name']}}{\json{['publications'][2]['releaseDate']}}{Search for Heavy Higgs Boson decaying into Two Tau Leptons with the ATLAS Detector Using $pp$ pp collisions at $\sqrt{s}$ = 13 TeV}{\json{['publications'][2]['publisher']}}{ATLAS}{\json{['publications'][2]['url']}}        
+        \publication{PhysRevLett. 125.051801}{}{Search for Heavy Higgs Boson decaying into Two Tau Leptons with the ATLAS Detector Using $pp$ pp collisions at $\sqrt{s}$ = 13 TeV}{2020}{ATLAS}{10.1103/PhysRevLett.125.051801}
         \footnotesize Attended training courses/schools, e.g.: 
         \begin{itemize}
           \footnotesize
-        \item{\href{https://indico.cern.ch/event/1172498/timetable/?view=standard}{\textbf{5th HEP C++ Course and Hands-on Training - Advanced C++}}, CERN, 2022}% 11-13 Oct 2022}
-          %% \item{\href{https://indico.cern.ch/event/946584/timetable/?view=standard}{\textbf{1st HEP C++ Course and Hands-on Training}}, CERN, 12-16 Oct 2020}
+        \item{\href{https://indico.cern.ch/event/1172498/timetable/?view=standard}{\textbf{5th HEP C++ Course and Hands-on Training - Advanced C++}}, CERN, 2022}
         \item{\href{https://indico.cern.ch/event/854880/timetable/?view=standard}{\textbf{GitLab CI/CD and Docker Fundamentals --- Analysis Preservation}}, CERN, 2020}%17-19 Feb 2020}
         \item{\href{https://indico.cern.ch/event/687473/timetable/?view=standard}{\textbf{Fourth Machine Learning in High Energy Physics Summer School 2018}}, Oxford, 2018}%6-12 Aug 2018 }
-          %% \item{\href{https://indico.cern.ch/event/614672/timetable/?view=standard}{\textbf{2017 European School of High-Energy Physics}}, Evora Portugal, 6-19 Sept 2017}
-          %% \item{\href{https://indico.cern.ch/event/558879/}{\textbf{2016 HEP School for Experimental High Energy Physics Students}}, University of Lancaster, 4-15 Sept 2016}
+
         \end{itemize}
         Presented at several international conferences, e.g.
         \begin{itemize}
         \item \href{https://moriond.in2p3.fr/2022/QCD/Program.html}{\textbf{56th Rencontres de Moriond on QCD and High Energy Interactions}}, La Thuile, Italy, 2022 
-        %%\item \href{https://moriond.in2p3.fr/2022/QCD/Program.html}{\textbf{56th Rencontres de Moriond on QCD and High Energy Interactions}}, \emph{Exotic Higgs at ATLAS and CMS}, La Thuile Italy, 19-26 March, 2022 
-          %% \item \href{https://indico.cern.ch/event/736911/}{\textbf{21st High-Energy Physics International Conference In QCD}}, \emph{Higgs boson cross-section measurements at ATLAS}, Montpellier Fr , 2-6 July 2018 
-          %% \item \href{https://indico.cern.ch/event/352528/}{\textbf{ Kruger 2014: Workshop on Discovery Physics at the LHC }}, \emph{Beyond-the-Standard Model Higgs physics using the ATLAS experiment}, South Africa , 26 Nov, 201 
         \end{itemize}
         and dozens of internal workshops and conferences over the years.\\
         \vspace{-0.22cm}
