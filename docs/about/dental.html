@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  
+<head>
+  <title>Anime.js Animation Example</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #dcf4e2; /* Add the desired background color */
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 50px;
+      font-family: Arial, sans-serif;
+    }
+
+    .colors-demo {
+	display: flex;
+	margin-bottom: 50px; 
+    }
+
+    .el {
+      width: 10px;
+      height: 10px;
+      margin-right: 5px;
+      background-color: orange;
+      border-radius: 50%;
+    }
+
+    .text {
+      margin-top: 20px;
+      font-size: 30px;
+      font-family: cursive;
+    }
+    .bottom-text {
+      margin-top: 10px; /* Adjust the margin-top value to position the bottom text lower */
+      font-size: 20px;
+      font-family: "Lucida Console", "Courier New", monospace;
+    }    
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+</head>
+<body>
+  
+  <div class="container">
+    <div class="text">TraditionalModel</div>
+    <div class="colors-demo"></div>
+    <div class="bottom-text">DentalMonitoring</div>
+  </div>
+
+  <script>
+    var dotsContainer = document.querySelector('.colors-demo');
+    var dots = '';
+
+    var totalDots = 150;
+    var nonAnimatedDotsCount = Math.floor(totalDots * 0.5); // 30% of dots won't be animated
+    var nonAnimatedDots = new Set();
+
+    while (nonAnimatedDots.size < nonAnimatedDotsCount) {
+      var randomIndex = Math.floor(Math.random() * totalDots);
+      nonAnimatedDots.add(randomIndex);
+    }
+
+    for (var i = 0; i < totalDots; i++) {
+      var dotClass = 'el';
+      if (nonAnimatedDots.has(i)) {
+        dotClass += ' non-animated';
+      }
+      dots += '<div class="' + dotClass + '"></div>';
+    }
+
+    dotsContainer.innerHTML = dots;
+
+    var animatedDots = document.querySelectorAll('.el:not(.non-animated)');
+    var textElement = document.querySelector('.text');
+
+    var colorsExamples = anime.timeline({
+      endDelay: 100,
+      easing: 'easeInOutQuad',
+      direction: 'alternate',
+      loop: true,
+      update: function() {
+        if (colorsExamples.reversed) {
+          textElement.textContent = 'Free Up 50% Appointments';
+          animatedDots.forEach(function(dot) {
+            dot.style.backgroundColor = '#1794ED';
+          });
+        } else {
+          textElement.textContent = "Traditional Model";
+          animatedDots.forEach(function(dot) {
+            dot.style.backgroundColor = '#FFA500';
+          });
+        }
+      }
+    })
+    .add({ targets: '.el', backgroundColor: '#FFA500' }, 0)
+    .add({
+      targets: animatedDots,
+      translateY: [0, 100],
+      delay: anime.stagger(50),
+    }, 0);
+  </script>
+</body>
+</html>
