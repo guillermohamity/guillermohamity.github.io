@@ -92,10 +92,10 @@ table = JSON:decode(read("resume-short.json"))
         & \node{English -- Native};\\
         \node{\flag{argentina.png}};
         & \node{Spanish -- Native};\\
-        \node{\flag{ZAR.png}};
-        & \node{Afrikaans -- Basic};\\
-        \node{\flag{France.png}};
-        & \node{French -- Beginner};\\
+        %\node{\flag{ZAR.png}};
+        %& \node{Afrikaans -- Basic};\\
+        %\node{\flag{France.png}};
+        %& \node{French -- Beginner};\\
         };
         \end{tikzpicture} 
         
@@ -106,16 +106,17 @@ table = JSON:decode(read("resume-short.json"))
     \begin{center}
         \cvtag{Python      }
         \cvtag{Tensorflow  }
-        \cvtag{Scipy       }
         \cvtag{Keras       }
+        \cvtag{Scipy       }
         \cvtag{Pandas      }
         \cvtag{Numpy       }
-        \cvtag{Jupyter     }        
-        \cvtag{matplotlib  }        
+        %\cvtag{Jupyter     }        
+        %\cvtag{matplotlib  }        
         \cvtag{pytest      }        
+        \cvtag{pip}        
         \cvtag{valgrind    }        
         \cvtag{CMake       }        
-        \cvtag{Unit Tests}        
+        %\cvtag{Unit Tests}        
         %%\cvtag{\json{['skills'][1]['keywords'][11]}}        
     \end{center}
     %% \ruleline{\json{['skills'][2]['name']}}
@@ -128,23 +129,25 @@ table = JSON:decode(read("resume-short.json"))
     \begin{center}
         \cvtag{ETL}
         \cvtag{Feature extraction }
-        \cvtag{Decision Trees               }
-        \cvtag{Ensambles     }
-        \cvtag{Neural Networks    }
-        \cvtag{VAEs/GANs}
-        \cvtag{MDNs}
-        \cvtag{Reinforcement}
+        \cvtag{(Un)Supervised Learning}
+        \cvtag{DTs and Ensambles}
+        %\cvtag{Ensambles     }
+        \cvtag{DNNs/CNNs/RNNs}      
+        \cvtag{Encoders and Adverserial}
+        \cvtag{Mixture Density Networks}
+        \cvtag{Regularisation/Bayesian Layers}      
+        \cvtag{TF-Probability}
+        \cvtag{TF-Datasets}
     \end{center}
     
     \ruleline{Technology}
     \begin{center}
         \cvtag{AWS         }
-        \cvtag{SQL         }
-        \cvtag{Git-CI      }
+        \cvtag{SQL/Mongo   }
+        \cvtag{Git-CI/CD   }
         \cvtag{Docker      }
-        \cvtag{Kubernetes  }
+        \cvtag{kubectl/qsub  }
         \cvtag{Linux/Server}
-        \cvtag{MongoDB}
         %% \cvtag{\json{['skills'][5]['keywords'][8]}}
         %% \cvtag{\json{['skills'][5]['keywords'][9]}}
         %\cvtag{\json{['skills'][5]['keywords'][10]}}
@@ -175,10 +178,16 @@ table = JSON:decode(read("resume-short.json"))
         % Profile section
         \vspace*{1cm}
         \ruleline{\textbf{About me}}
-        Decade+ in \hitext{\textbf{applied data analysis}} with expertise in \emph{code development and deployment, data preparation, distributed computing, machine learning, and hypothesis testing}.
-        Currently leverage ML for stochastic modelling in sports betting markets. Previously a researcher at the \hitext{\emph{Large Hadron Collider, CERN}}.
-        Involved in leading publications and experienced in \hitextbf{collaborative research} and \textbf{supervision}, held \textbf{leadership} roles within the 3000+ people collaboration,
-        and am an \textbf{efficient independent} worker and clear \textbf{communicator}.
+        Passionate and results-driven \textbf{data scientist} with a proven track record in delivering impactful data solutions. I specialize in \textbf{code development and deployment, data preparation, efficient handling of distributed computing, advanced machine learning techniques, and rigorous hypothesis testing}. Currently, I apply my skills to the dynamic realm of sports betting markets, leveraging ML for stochastic market modeling.\\\\
+        In my previous role as a researcher at the \textbf{LHC, CERN}, I actively contributed to groundbreaking projects and collaborated with diverse teams. Recognized for my \textbf{leadership} in steering publications and my expertise in \textbf{collaborative research}, I am adept at managing complex projects and supervising teams.\\
+        I pride myself on being an \textbf{efficient independent worker} with a knack for \textbf{clear communication}. I strive to remain at the forefront of technological advancements in the field, exemplified by the \textbf{ML lectures} I delivered at the \textbf{University of Edinburgh}. My commitment to excellence is evident in my ability to deliver high-impact and well-researched solutions efficiently.
+
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        
+        %% Expert in \hitext{\textbf{applied data science}} with expertise in \emph{code development and deployment, data preparation, distributed computing, machine learning, and hypothesis testing}.
+        %% Currently leverage ML for stochastic modelling in sports betting markets. Previously a researcher at the \hitext{\emph{Large Hadron Collider, CERN}}.
+        %% Involved in leading publications and experienced in \hitextbf{collaborative research} and \textbf{supervision}, held \textbf{leadership} roles within the 3000+ people collaboration,
+        %% and am an \textbf{efficient independent} worker and clear \textbf{communicator}.
         \vspace*{.1cm}
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         % Work Experience
@@ -187,21 +196,26 @@ table = JSON:decode(read("resume-short.json"))
         \MySectionNoFill{From Jun. 2023}{}{Quantitative Researcher}{}{PLAYMETECH, London}{}{}}
                   \footnotesize{
                     \begin{itemize}
-                    %\item \json{['work'][1]['highlights'][1]}
-                    \item Lead the design and deployment of \hitext{stochastic models} to predict match and odds in different sports betting markets using a data based approach. 
-                    \item \hitext{Develop ML based strategies} for sports betting with \hitext{{\it{Bayesian} and \it{Reinforcement}\,}} techniques and model their intrinsic risk. Document and communicate strategies transparently. 
-                    \item Create database processing pipelines from several \hitext{SQL and NoSQL} sources.
+                      %\item \json{['work'][1]['highlights'][1]}
+                    \item Successfully prototyped, tested, and deployed \textbf{stochastic machine learning models} to predict match outcomes and odds in diverse sports betting markets, utilizing a data-driven approach.
+                    \item Developed outcome-oriented trading strategies and implemented a robust testing suite to \textbf{benchmark models} against historical data. Effectively communicated results with clarity and efficiency.
+                    \item Led the research and development of innovative neural network architectures, including \textbf{Recursive}, \textbf{Bayesian}, and \textbf{MixtureDensity Deep Networks}, utilizing state-of-the-art technologies. Modeled the intrinsic risk associated with these architectures.
+                    \item Created database processing pipelines from various \textbf{SQL and NoSQL} sources, packaging \textbf{production-ready code} for live predictive analysis.
                     \end{itemize}
                   }
         \vspace*{0.22cm}                        
-        \MySectionNoLoc{2019--May 2023}{ued-blackonwhite.png}{Postdoctoral Research Associate}{ATLAS Experiment}{The University of Edinburgh}{Research}{\small{\footnotesize{Active in all areas of physics \textbf{analysis}, incl. data preparation, software development/maintenance, algorithm design/deployment, and statistical intepretation. Responsibilities in \textbf{lecturing}, \textbf{supervising} and \textbf{leadership}.}}}
+        \MySectionNoLoc{2019--May 2023}{ued-blackonwhite.png}{Postdoctoral Research Associate}{ATLAS Experiment, CERN}{The University of Edinburgh}{Research}{\small{\footnotesize{Engaged in comprehensive physics \textbf{analysis}, encompassing data preparation, software development/maintenance, algorithm design/deployment, and statistical interpretation.}}}% Responsibilities also included \textbf{lecturing}, \textbf{supervising} PhD research, and team \textbf{leadership}.
         \footnotesize{
           \begin{itemize}
+          \item Spearheaded the \textbf{development and deployment of software} for particle tracking and identification in the ATLAS collaboration software release.
+          \item Designed and implemented algorithms, including those utilizing \textbf{neural networks}, for particle identification. Additionally, developed widely-used analysis tools in {C++/Python} within the collaboration.
+          \item Took a \textbf{leadership role} in analysis efforts, actively contributing to ongoing publications and technical reports. Proficient in paper writing and peer-review processes for \textbf{leading journals} and international conferences. Facilitated research teams through regular interaction and collaborative group work.
+          \item \textbf{Lectured} on machine learning in the MSc course, emphasizing practical applications. Covered \textbf{data preparation}, \textbf{regression}, \textbf{classification}, \textbf{decision trees}, \textbf{feature extraction}, and various \textbf{neural network architectures} (\emph{DNNs, RNNs, CNNs, VAEs, GANs}).
             
-          \item \hitext{Developed and deployment of software} for particle tracking and identification in the ATLAS collaboration software release.
-          \item Delivered algorithms using \hitextbf{neural-networks} for particle identification, as well as \hitext{develop c++/python} analysis tools with \hitext{widespread use} in the collaboration.
-          \item Have been an \textbf{analysis leader}, involved in ongoing publications, including technical reports. Experienced in paper writing and peer-review in \hitext{leading journals} and at international conferences. Convened research teams with regular interaction and group work. 
-          \item \textbf{Lectured machine learning} MSc course with an emphasis on practical application, covering \textbf{data preparation}, \textbf{regression}, \textbf{classification}, \textbf{decision trees}, \textbf{feature extraction}, and \textbf{neural-networs} (\emph{DNNs, RNNs, CNNs, VAEs, GANs})
+          %% \item \hitext{Developed and deployment of software} for particle tracking and identification in the ATLAS collaboration software release.
+          %% \item Delivered algorithms using \hitextbf{neural-networks} for particle identification, as well as \hitext{develop c++/python} analysis tools with \hitext{widespread use} in the collaboration.
+          %% \item Have been an \textbf{analysis leader}, involved in ongoing publications, including technical reports. Experienced in paper writing and peer-review in \hitext{leading journals} and at international conferences. Convened research teams with regular interaction and group work. 
+          %% \item \textbf{Lectured machine learning} MSc course with an emphasis on practical application, covering \textbf{data preparation}, \textbf{regression}, \textbf{classification}, \textbf{decision trees}, \textbf{feature extraction}, and \textbf{neural-networs} (\emph{DNNs, RNNs, CNNs, VAEs, GANs})
 
           \end{itemize}
         }
@@ -210,33 +224,33 @@ table = JSON:decode(read("resume-short.json"))
     % Education
   
         \section*{{\faGraduationCap} EDUCATION}
-        \MySectionNoLoc{2015--2019}{shef.png}{PhD in High Energy Physics}{ATLAS Experiment}{The University of Sheffield}{PhD candidate}{\href{https://etheses.whiterose.ac.uk/25836/1/thesis_final.pdf}{\emph{Thesis:} Probing the Beyond Standard Model Higgs Sector using ATLAS}}
+        \MySectionNoLoc{2015--2019}{shef.png}{PhD in High Energy Physics}{ATLAS Experiment, CERN}{The University of Sheffield}{PhD candidate}{\href{https://etheses.whiterose.ac.uk/25836/1/thesis_final.pdf}{\emph{Thesis:} Probing the Beyond Standard Model Higgs Sector using ATLAS}}
         \\\\
         \MySectionNoFill{2013--2015}{}{MSc in Physics}{}{Uni of Witwatersrand (ZAR)}{}{}}
     \\\\
         \MySectionNoFill{2008--2012}{}{BSc and Honours in Physics}{}{The University of Pretoria (ZAR)}{}{}}
             
-        \vspace*{0.22cm}
+        %% \vspace*{0.22cm}
             
 
-        \section*{{\faHeart} HIGHLIGHTS}
-        \footnotesize Involved in several publications (full list on request), e.g.\\
-        \publication{PhysRevLett. 125.051801}{}{Search for Heavy Higgs Boson decaying into Two Tau Leptons with the ATLAS Detector Using $pp$ pp collisions at $\sqrt{s}$ = 13 TeV}{2020}{ATLAS}{10.1103/PhysRevLett.125.051801}
-        \footnotesize Attended training courses/schools, e.g.: 
-        \begin{itemize}
-          \footnotesize
-        \item{\href{https://indico.cern.ch/event/1172498/timetable/?view=standard}{\textbf{5th HEP C++ Course and Hands-on Training - Advanced C++}}, CERN, 2022}
-        \item{\href{https://indico.cern.ch/event/854880/timetable/?view=standard}{\textbf{GitLab CI/CD and Docker Fundamentals --- Analysis Preservation}}, CERN, 2020}%17-19 Feb 2020}
-        \item{\href{https://indico.cern.ch/event/687473/timetable/?view=standard}{\textbf{Fourth Machine Learning in High Energy Physics Summer School 2018}}, Oxford, 2018}%6-12 Aug 2018 }
+        %% \section*{{\faHeart} HIGHLIGHTS}
+        %% \footnotesize Involved in several publications (full list on request), e.g.\\
+        %% \publication{PhysRevLett. 125.051801}{}{Search for Heavy Higgs Boson decaying into Two Tau Leptons with the ATLAS Detector Using $pp$ pp collisions at $\sqrt{s}$ = 13 TeV}{2020}{ATLAS}{10.1103/PhysRevLett.125.051801}
+        %% \footnotesize Attended training courses/schools, e.g.: 
+        %% \begin{itemize}
+        %%   \footnotesize
+        %% \item{\href{https://indico.cern.ch/event/1172498/timetable/?view=standard}{\textbf{5th HEP C++ Course and Hands-on Training - Advanced C++}}, CERN, 2022}
+        %% \item{\href{https://indico.cern.ch/event/854880/timetable/?view=standard}{\textbf{GitLab CI/CD and Docker Fundamentals --- Analysis Preservation}}, CERN, 2020}%17-19 Feb 2020}
+        %% \item{\href{https://indico.cern.ch/event/687473/timetable/?view=standard}{\textbf{Fourth Machine Learning in High Energy Physics Summer School 2018}}, Oxford, 2018}%6-12 Aug 2018 }
 
-        \end{itemize}
-        Presented at several international conferences, e.g.
-        \begin{itemize}
-        \item \href{https://moriond.in2p3.fr/2022/QCD/Program.html}{\textbf{56th Rencontres de Moriond on QCD and High Energy Interactions}}, La Thuile, Italy, 2022 
-        \end{itemize}
-        and dozens of internal workshops and conferences over the years.\\
-        \vspace{-0.22cm}
-        \textbf{Full list of publications, talks and schools upon request}
+        %% \end{itemize}
+        %% Presented at several international conferences, e.g.
+        %% \begin{itemize}
+        %% \item \href{https://moriond.in2p3.fr/2022/QCD/Program.html}{\textbf{56th Rencontres de Moriond on QCD and High Energy Interactions}}, La Thuile, Italy, 2022 
+        %% \end{itemize}
+        %% and dozens of internal workshops and conferences over the years.\\
+        %% \vspace{-0.22cm}
+        %% \textbf{Full list of publications, talks and schools upon request}
 
         \end{minipage}} %
 
