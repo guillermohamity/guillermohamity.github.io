@@ -1,0 +1,470 @@
+% Preamble
+% Compile with XeLateX
+
+\documentclass[11 pt,oneside,a4paper,titlepage]{article}
+\usepackage{preamble}
+\usepackage{luacode}
+\usepackage{mathtools}
+\usepackage{mdframed}
+\usepackage{xcolor}
+% Define the colors for the box and text
+\definecolor{boxcolor}{}{#002366}
+\definecolor{textcolor}{RGB}{240,240,240}
+\definecolor{royalblue(traditional)}{rgb}{0.0, 0.14, 0.4}
+\definecolor{lightblue}{rgb}{0.68, 0.85, 0.9} 
+% Define the blue font color
+\definecolor{palegray}{RGB}{234,234,234}
+\definecolor{chargray}{RGB}{68,68,68}
+
+%\newcommand{\hitext}[1]{\textcolor{textcolor}{\begin{mdframed}[style=mystyle]#1\end{mdframed}}}
+\newcommand{\hitext}[1]{\colorbox{palegray}{{#1}}}
+\newcommand{\hitextbf}[1]{\colorbox{palegray}{\textbf{#1}}}
+% Set the font color to blue
+% Define the red font color
+
+
+\newcommand{\json}[1]{\directlua{tex.print(table#1)}}
+\graphicspath{{PIC/}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+% load json file
+\begin{luacode}
+function read(file)
+    local handler = io.open(file, "rb")
+    local content = handler:read("*all")
+    handler:close()
+    return content
+end
+JSON = (loadfile "JSON.lua")()
+table = JSON:decode(read("resume-short.json"))
+\end{luacode}
+
+
+\sidebar{sideBarColor!25}
+\simpleheader{titleBackColor}{Dr. Guillermo}{Hamity}{PhD | Senior Data Scientist | Machine Learning Engineer}{white}
+
+% Start Minipages
+\vspace*{1.5cm}% start 8 cm from the top of the page}
+    \adjustbox{valign=t}{\begin{minipage}{5.4cm} % large 7.4 cm from the top
+    \vspace*{1.2cm} % text starts 1cm under the top of the minipage
+            
+        
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        % Contact Section
+        \ruleline{\textbf{Contact}}
+        \begin{tikzpicture}[every node/.style={inner sep=0pt, outer sep=0pt}]
+        \matrix [
+        column 1/.style={anchor=center,contactIcon},
+        column 2/.style={anchor=west,align=left,contactIcon},
+        column sep=5pt,
+        row sep=5pt] (contact) {
+          \node{\faGlobe};
+          & \node{\href{https://guillermohamity.github.io/DAML/}{ML Lectures}};\\
+          \node{\faEnvelope};
+          & \node{\href{mailto:ghamity@pm.me}{ghamity@pm.me}};\\
+          \node{\faEnvelope};
+          & \node{\href{mailto:guillermo.hamity@lloydsbanking.com}{@lloyds}};\\
+          \node{\faLinkedin};
+          & \node{\href{https://www.linkedin.com/in/guillermo-hamity-05243a152/}{linkedin.com/in/ghamity}};\\
+          %\node{\faGithub};
+          %& \node{\href{https://github.com/guillermohamity}{github.com/guillermohamity}};\\
+          \node{\faBook}; 
+          & \node{\href{https://orcid.org/0000-0002-4537-0377}{ORCID: 0000-0002-4537-0377}};\\
+          \node{\faMapMarker}; 
+          & \node{Lloyds Banking Group\\ Edinburgh, UK};\\
+        };          
+        \end{tikzpicture} 
+        
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        \ruleline{\textbf{Languages}}
+        \begin{tikzpicture}[every node/.style={inner sep=0pt, outer sep=0pt}]
+        \matrix [
+        column 1/.style={anchor=center,contactIcon},
+        column 2/.style={anchor=west,align=left,contactIcon},
+        column sep=5pt,
+        row sep=5pt] (contact) {
+        \node{\flag{England.png}};
+        & \node{English -- Native};\\
+        \node{\flag{argentina.png}};
+        & \node{Spanish -- Native};\\
+        %\node{\flag{ZAR.png}};
+        %& \node{Afrikaans -- Basic};\\
+        %\node{\flag{France.png}};
+        %& \node{French -- Beginner};\\
+        };
+        \end{tikzpicture} 
+        
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % Professional Skills 
+    \ruleline{\textbf{Professional Skills}}
+    \ruleline{Python/C++}
+    \begin{center}
+        \cvtag{Python      }
+        \cvtag{Tensorflow  }
+        \cvtag{Keras       }
+        \cvtag{Scipy       }
+        \cvtag{Pandas      }
+        \cvtag{Numpy       }
+        \cvtag{Pydantic}
+        %\cvtag{Jupyter     }        
+        %\cvtag{matplotlib  }        
+        \cvtag{pytest      }        
+        \cvtag{pip}
+        %\cvtag{valgrind    }        
+        \cvtag{CMake       }        
+        \cvtag{Unit Tests}        
+        %%\cvtag{\json{['skills'][1]['keywords'][11]}}        
+    \end{center}
+    %% \ruleline{\json{['skills'][2]['name']}}
+    %% \begin{center}
+    %%     \cvtag{\json{['skills'][2]['keywords'][1]}}
+    %%     \cvtag{\json{['skills'][2]['keywords'][2]}}
+    %%     \cvtag{\json{['skills'][2]['keywords'][3]}}
+    %% \end{center}
+    \ruleline{Machine Learning}
+    \begin{center}
+    \cvtag{MLOps}
+    \cvtag{Vertex AI}
+    \cvtag{Explainable ML}
+    \cvtag{Agentic AI}
+    \cvtag{ETL}
+    \cvtag{Feature Engineering}
+    \cvtag{TF-Data}
+    \cvtag{Supervised/Unsupervised Learning}
+    \cvtag{Ensembles}
+    \cvtag{Deep Learning (DNNs/BNNs/RNNs)}
+    \cvtag{Probabilistic Models}
+    \cvtag{TF-Probability}
+    \end{center}
+    
+    \ruleline{Technology}
+    \begin{center}
+      \cvtag{GCP}
+      \cvtag{Vertex AI Pipelines}
+      \cvtag{CI/CD (GitHub)}
+      \cvtag{Kubeflow}
+      \cvtag{Docker}
+      \cvtag{Linux}
+      \cvtag{Git}
+      \cvtag{AWS}
+        %% \cvtag{\json{['skills'][5]['keywords'][8]}}
+        %% \cvtag{\json{['skills'][5]['keywords'][9]}}
+        %\cvtag{\json{['skills'][5]['keywords'][10]}}
+    \end{center}
+    \ruleline{Statistics}
+    \begin{center}
+        \cvtag{Hypothesis testing}
+        \cvtag{A/B tests}
+        \cvtag{Likelihood models}
+        \cvtag{Simulation}
+        \cvtag{Stochastic models}
+        
+    \end{center}
+        \ruleline{\textbf{Download My CV}}
+        \scriptsize
+        \centering
+        Download my CV via the QR below
+        \begin{center}
+            \quad
+            \qrcode[height=2cm]{https://guillermohamity.github.io/pdfresume/ghamity-short.pdf} \\
+        \end{center}
+    \end{minipage}} %
+    \hfill 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% MAIN SECTION %%%%%%%%%%%%%%%%%%%%
+    \adjustbox{valign=t}{\begin{minipage}{13.3cm}
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        % Profile section
+        \vspace*{1cm}
+        \ruleline{\textbf{About me}}
+        Passionate and results-driven \textbf{Senior Data Scientist} specialising in end-to-end AI/ML delivery, cloud-native development, and enterprise MLOps. Experienced in leading use-case teams, managing stakeholders, and translating flexible requirements into scalable, explainable, and compliant ML solutions. Strong background in statistical modelling and scientific research (PhD, CERN) with expert knowledge in ML and AI (Lecturing at UoE) and a focus on rigorous methodology and production-quality engineering.
+        %% \begin{itemize}
+        %%   \item Researcher at the \textbf{LHC, CERN}, actively contributed to groundbreaking projects and collaborated with diverse teams.
+        %%   \item Recognized for \textbf{leadership} in steering publications and \textbf{collaborative research}, I am adept at managing complex projects and supervising teams.
+        %%   \item \textbf{Efficient independent worker} with a knack for \textbf{clear communication}.
+        %%   \item Remain at the forefront of technological advancements in the field, exemplified by \textbf{ML lectures} delivered at the \textbf{University of Edinburgh}.
+        %% \end{itemize}
+        %% In my previous role as a researcher at the \textbf{LHC, CERN}, I actively contributed to groundbreaking projects and collaborated with diverse teams. Recognized for my \textbf{leadership} in steering publications and my expertise in \textbf{collaborative research}, I am adept at managing complex projects and supervising teams.\\
+        %% I pride myself on being an \textbf{efficient independent worker} with a knack for \textbf{clear communication}. I strive to remain at the forefront of technological advancements in the field, exemplified by the \textbf{ML lectures} I delivered at the \textbf{University of Edinburgh}. My commitment to excellence is evident in my ability to deliver high-impact and well-researched solutions efficiently.
+
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        
+        %% Expert in \hitext{\textbf{applied data science}} with expertise in \emph{code development and deployment, data preparation, distributed computing, machine learning, and hypothesis testing}.
+        %% Currently leverage ML for stochastic modelling in sports betting markets. Previously a researcher at the \hitext{\emph{Large Hadron Collider, CERN}}.
+        %% Involved in leading publications and experienced in \hitextbf{collaborative research} and \textbf{supervision}, held \textbf{leadership} roles within the 3000+ people collaboration,
+        %% and am an \textbf{efficient independent} worker and clear \textbf{communicator}.
+        \vspace*{.1cm}
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        % Work Experience
+        \section*{{\faSuitcase} WORK EXPERIENCE}
+        \vspace*{0.22cm}
+        %\MySectionNoFill{From Jun. 2024}{}{Senior Data Scientist}{}{Lloyds Banking Group, Edinburgh}{}{}
+        \MySectionNoLoc{From Jun. 2024}{Large@2x.png}{Senior Data Scientist}{}{Lloyds Banking Group, Edinburgh}{}{\small Lead a cross-functional use-case team delivering \textbf{end-to-end ML and MLOps pipelines} using Vertex AI and cloud-native tooling.}
+        \small{
+          \begin{itemize}
+          %\item Lead a cross-functional use-case team delivering \textbf{end-to-end ML and MLOps pipelines} using Vertex AI and cloud-native tooling.
+          \item Designed and deployed a fully automated \textbf{MLOps pipeline} for actuarial risk models, enabling reproducible, explainable, and governance-aligned ML.
+          \item Translate flexible and evolving \textbf{stakeholder requirements} into actionable technical plans and communicated progress and results in a transparent way.
+          \item Built and benchmarked modern ML models, integrating \textbf{innovative methodologies} that improved accuracy and streamlined stakeholder processes.
+          \item Manage \textbf{delivery timelines}, coordinate scrum tasks, delegate work, and review GitHub pull requests to maintain high engineering standards.
+          \item Earned peer recognition through awards such as \textit{Innovator of the Year} (2024) and \textit{TechWizz} (2025), reflecting leadership in ML engineering and innovation.  
+          %\item Build automated workflows and CI/CD pipelines supporting scalable, maintainable, and monitored ML deployments across the business.
+          \end{itemize}
+        }        
+        \vspace*{0.22cm}
+        \MySectionNoFill{2023--May 2024}{}{Quantitative Researcher}{}{PLAYMETECH, London}{}{}}
+                  \small{
+                    \begin{itemize}
+                      %\item \json{['work'][1]['highlights'][1]}
+                    \item Led R\&D of innovative neural network architectures, including \textbf{Recursive}, \textbf{Bayesian}, and \textbf{MixtureDensity Deep Networks}, and developed simulation techniques to model intrinsic risk.
+                    \item \textbf{Prototyped, tested, and deployed} ML models for predicting match and market dynamics, supported by outcome-oriented trading strategies and a robust \textbf{benchmarking} suite.
+                    \item Managed ETL workflows across \textbf{SQL and NoSQL} sources and delivered \textbf{production-ready code} for real-time predictive analysis, effectively communicating results to stakeholders.
+  
+                    %\item Led R\&D of innovative neural network architectures, including \textbf{Recursive}, \textbf{Bayesian}, and \textbf{MixtureDensity Deep Networks}, utilizing state-of-the-art technologies. Produced simulation techniques to model intrinsic risk.
+                    %\item Successfully \textbf{prototyped, tested, and deployed} ML models to predict match and market dynamics, utilizing a data-driven approach.
+                    %\item Developed outcome-oriented trading strategies with robust testing suite to \textbf{benchmark models} against historical data. Effectively communicated results with clarity and efficiency.
+                    %\item Manage ETL pipelines from various \textbf{SQL and NoSQL} sources, packaging \textbf{production-ready code} for live predictive analysis.
+                    \end{itemize}
+                  }
+        \vspace*{0.22cm}                        
+        %\MySectionNoFill{2019--May 2023}{}{Postdoctoral Research Associate}{ATLAS Experiment, CERN}{University of Edinburgh, UK}{}{}}
+        \MySectionNoLoc{2019--May 2023}{ued-blackonwhite.png}{Postdoctoral Research Associate}{}{The University of Edinburgh}{Research}{\small Led the development and deployment of particle tracking and identification AI algorithms for the ATLAS collaboration.}
+        %\MySectionNoLoc{2019--May 2023}{ued-blackonwhite.png}{Postdoctoral Research Associate}{ATLAS Experiment, CERN}{The University of Edinburgh}{Research}{\small{\footnotesize{Engaged in comprehensive physics \textbf{analysis}, encompassing data preparation, software development/maintenance, algorithm design/deployment, and statistical interpretation.}}}% Responsibilities also included \textbf{lecturing}, \textbf{supervising} PhD research, and team \textbf{leadership}.
+          \small{
+          \begin{itemize}
+          %\item Led the development and deployment of particle tracking and identification AI algorithms for the ATLAS collaboration.
+          \item Built particle-ID algorithms, including \textbf{neural-network–based} methods, and developed widely used C++/Python analysis tools.
+          \item Took a \textbf{leadership role} in analysis efforts, contributing to publications, technical reports, and collaborative research coordination.
+          \item \textbf{Lectured} MSc machine learning, covering practical data preparation, modelling, and neural network architectures.
+            
+          %% \item \hitext{Developed and deployment of software} for particle tracking and identification in the ATLAS collaboration software release.
+          %% \item Delivered algorithms using \hitextbf{neural-networks} for particle identification, as well as \hitext{develop c++/python} analysis tools with \hitext{widespread use} in the collaboration.
+          %% \item Have been an \textbf{analysis leader}, involved in ongoing publications, including technical reports. Experienced in paper writing and peer-review in \hitext{leading journals} and at international conferences. Convened research teams with regular interaction and group work. 
+          %% \item \textbf{Lectured machine learning} MSc course with an emphasis on practical application, covering \textbf{data preparation}, \textbf{regression}, \textbf{classification}, \textbf{decision trees}, \textbf{feature extraction}, and \textbf{neural-networs} (\emph{DNNs, RNNs, CNNs, VAEs, GANs})
+
+          \end{itemize}
+        }
+        \vspace*{0.22cm}                        
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % Education
+  
+        \section*{{\faGraduationCap} EDUCATION}
+        \MySectionNoLoc{2015--2019}{shef.png}{PhD in High Energy Physics}{ATLAS Experiment, CERN}{The University of Sheffield}{PhD candidate}{\href{https://etheses.whiterose.ac.uk/25836/1/thesis_final.pdf}{\emph{Thesis:} Probing the Beyond Standard Model Higgs Sector using ATLAS}}
+        \\\\
+        \MySectionNoFill{2013--2015}{}{MSc in Physics}{}{Uni of Witwatersrand (ZAR)}{}{}}
+    \\\\
+        %\MySectionNoFill{2008--2012}{}{BSc and Honours in Physics}{}{The University of Pretoria (ZAR)}{}{}}
+            
+        %% \vspace*{0.22cm}
+            
+
+        %% \section*{{\faHeart} HIGHLIGHTS}
+        %% \footnotesize Involved in several publications (full list on request), e.g.\\
+        %% \publication{PhysRevLett. 125.051801}{}{Search for Heavy Higgs Boson decaying into Two Tau Leptons with the ATLAS Detector Using $pp$ pp collisions at $\sqrt{s}$ = 13 TeV}{2020}{ATLAS}{10.1103/PhysRevLett.125.051801}
+        %% \footnotesize Attended training courses/schools, e.g.: 
+        %% \begin{itemize}
+        %%   \footnotesize
+        %% \item{\href{https://indico.cern.ch/event/1172498/timetable/?view=standard}{\textbf{5th HEP C++ Course and Hands-on Training - Advanced C++}}, CERN, 2022}
+        %% \item{\href{https://indico.cern.ch/event/854880/timetable/?view=standard}{\textbf{GitLab CI/CD and Docker Fundamentals --- Analysis Preservation}}, CERN, 2020}%17-19 Feb 2020}
+        %% \item{\href{https://indico.cern.ch/event/687473/timetable/?view=standard}{\textbf{Fourth Machine Learning in High Energy Physics Summer School 2018}}, Oxford, 2018}%6-12 Aug 2018 }
+
+        %% \end{itemize}
+        %% Presented at several international conferences, e.g.
+        %% \begin{itemize}
+        %% \item \href{https://moriond.in2p3.fr/2022/QCD/Program.html}{\textbf{56th Rencontres de Moriond on QCD and High Energy Interactions}}, La Thuile, Italy, 2022 
+        %% \end{itemize}
+        %% and dozens of internal workshops and conferences over the years.\\
+        %% \vspace{-0.22cm}
+        %% \textbf{Full list of publications, talks and schools upon request}
+
+        \end{minipage}} %
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Second Page
+%% \newpage
+
+%% \sidebar{sideBarColor!25}
+%% \newpageheader{titleBackColor}{Guillermo}{Hamity}{Data Science \faLightbulbO \hspace{1mm} Research}{white}
+
+%% % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% SIDEBAR %%%%%%%%%%%%%%%%%%%
+%% \adjustbox{valign=t}{%
+%% \begin{minipage}{5.3cm} 
+%% \vspace*{0.4cm} % text starts 0.4cm under the top the header
+        
+
+
+%%     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%     % Skill and Strengths 
+%%     %% \ruleline{\textbf{Soft Skills and Strengths}}
+%%     %% \vspace*{-0.5cm}
+%%     %% \begin{center}
+%%     %%     \cvtag{Creativity}\cvtag{Curiosity}\cvtag{Flexibility}\cvtag{Self Confidence}\cvtag{Ability to Plan and Organize} \cvtag{Autonomy}\cvtag{Adaptability} \cvtag{Eye for Details}\cvtag{Problem Solving}\cvtag{Team Working}\cvtag{Love Learning New Things}\cvtag{Leadership}\cvtag{Good Communication}\cvtag{Managing Information}\cvtag{Diplomacy}\cvtag{Good Listener}\cvtag{Patience}
+%%     %% \end{center}
+
+
+%%     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%     % Other Interests
+%%     %% \ruleline{\textbf{Other Interests}}
+%%     %% \small
+%%     %% \begin{multicols}{2}
+%%     %%     \begin{itemize} 
+%%     %%         \item  Guitar \flag{Guitar.png}
+%%     %%         \item  Piano \flag{Piano.png}
+%%     %%         \item  Chess \flag{Chess.png}
+%%     %%         \item  Gym \flag{Gym.png}
+%%     %%         \item  Travels \flag{Travels.png}
+%%     %%         \item  Movies \flag{movie2.png}
+%%     %%         \item  Books \flag{Books.png}
+%%     %% \end{itemize}
+%%     %% \end{multicols}
+
+%%      %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%         % QR Code
+
+%% \end{minipage}
+%% }%
+%% \hfill
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% MAIN %%%%%%%%%%%%%%%%%%%%%%%%%
+%% \adjustbox{valign=t}{%
+%% \begin{minipage}{13.3cm}
+%%   \vspace*{0.4cm}                
+%%     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%     % Peer Reviews
+%%     %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%     %% % Information Technology Skills
+%%     %% \section*{{\faDesktop} INFORMATION TECHNOLOGY SKILLS}
+    
+%%     %% \ITCcompetence{Data Analysis}{
+%%     %% \textbf{MATLAB}: \textit{Higly Specialized}\\
+%%     %% \textbf{Wolfram Mathematica}: \textit{Intermediate}\\
+%%     %% \textbf{Jupiter Notebook}: \textit{Intermediate}\\
+%%     %% }
+    
+%%     %% \vspace*{0.22cm}
+
+%%     %% \ITCcompetence{Modeling and Simulation}{
+%%     %% \textbf{Simulink} : \textit{Intermediate}  \\
+%%     %% \textbf{LTSpice}: \textit{Intermediate}
+%%     %% }
+    
+%%     %% \vspace*{0.22cm}
+
+%%     %% \ITCcompetence{Audio Processing}{
+%%     %% \textbf{Reaper} : \textit{Advanced}  \\
+%%     %% }
+
+%%     %% \vspace*{0.22cm}
+
+%%     %% \ITCcompetence{Office Automation}{
+%%     %% \textbf{MS Office (Excel, Word, PowerPoint)}: \textit{Higly Specialized}\\
+%%     %% \textbf{\LaTeX}: \textit{Advanced}\\
+%%     %% }
+    
+%%     %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%     %% % Programming Languages
+%%     %% \section*{{\faCode} PROGRAMMING LANGUAGES}
+%%     %% \vspace*{-0.5cm}
+%%     %% \begin{multicols}{2}    
+%%     %% \begin{itemize}
+%%     %% \footnotesize
+%%     %%     \item \textbf{Matlab}: Highly Specialised
+%%     %%     \item \textbf{Python}: Advanced
+%%     %%     \item \textbf{SQL}: Intermediate
+%%     %%     \item \textbf{C/C++}: Intermediate
+%%     %%     \item \textbf{Java}: Basic
+%%     %%     \item[\vspace{\fill}]
+%%     %% \end{itemize}
+%%     %% \end{multicols}
+%%         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%         % Publications
+%%         \section*{{\faBook} MAIN PUBLICATIONS}
+%%         \emp{Full list upon request}
+            
+%%         \vspace*{0.22cm}
+                         
+%%         \publication{\json{['publications'][2]['name']}}{\json{['publications'][2]['releaseDate']}}{Search for Heavy Higgs Boson decaying into Two Tau Leoptons with the ATLAS Detector Using $pp$ pp collisions at $\sqrt{s}$ = 13 TeV}{\json{['publications'][2]['publisher']}}{ATLAS}{\json{['publications'][2]['url']}}
+            
+%%         \vspace*{0.22cm}
+%%         \publication{\json{['publications'][3]['name']}}{\json{['publications'][3]['releaseDate']}}{Combined measurements of Higgs boson production and decay using up to 80 $fb^{-1}$ of proton–proton collision data at 13 TeV collected with the ATLAS experiment}{\json{['publications'][3]['publisher']}}{ATLAS}{\json{['publications'][3]['url']}}
+            
+%%     %%     \vspace*{0.22cm}
+            
+%%     %%     \publication{\json{['publications'][1]['name']}}{\json{['publications'][1]['releaseDate']}}{Search for charged Higgs bosons decaying via $H^\pm\rightarrow\tau\nu$ in the  $\tau$+jets and $\tau$+lepton final states with 36 $fb^{−1}$ of pp collision data recorded at $\sqrt{s}$ = 13 TeV with the ATLAS experiment}{\json{['publications'][1]['publisher']}}{ATLAS}{\json{['publications'][1]['url']}}
+%%     %%     \vspace*{0.22cm}
+            
+%%     %%     \publicationconf{\json{['publications'][4]['name']}}{\json{['publications'][4]['releaseDate']}}{Search for heavy long-lived multi-charged particles in the full Run-II $pp$ collision data at $\sqrt{s}$ = 13 TeV using the ATLAS detector}{ATLAS}{\json{['publications'][4]['url']}}
+%%     %%     \vspace*{0.22cm}
+%%     %%     \publicationconf{\json{['publications'][5]['name']}}{\json{['publications'][5]['releaseDate']}}{Reconstruction, Identification, and Calibration of hadronically decaying tau leptons with the ATLAS detector for the LHC Run 3 and reprocessed Run 2 data}{ATLAS}{\json{['publications'][5]['url']}}
+    
+%%     %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%     %% % Certificates
+%%     %%     \section*{{\faCertificate} REFERENCES}
+%%     %%     \emph{\json{['references'][1]['reference']}} \hspace{1em} \href{  \json{['references'][1]['url']}}{Website},\hfill      \href{  mailto:\json{['references'][1]['contact']}}{\json{['references'][1]['contact']}}
+%%     %%         \begin{itemize}
+%%     %%         \item \textit{\json{['references'][1]['name']}}
+%%     %%         \end{itemize}
+%%     %%     \emph{\json{['references'][2]['reference']}} \hspace{1em} \href{  \json{['references'][2]['url']}}{Website},\hfill      \href{  mailto:\json{['references'][2]['contact']}}{\json{['references'][2]['contact']}}
+%%     %%         \begin{itemize}
+%%     %%         \item \textit{\json{['references'][2]['name']}}
+%%     %%         \end{itemize}
+%%     %%     \emph{\json{['references'][3]['reference']}} \hspace{1em} \href{  \json{['references'][3]['url']}}{Website},\hfill      \href{  mailto:\json{['references'][3]['contact']}}{\json{['references'][3]['contact']}}
+%%     %%         \begin{itemize}
+%%     %%         \item \textit{\json{['references'][3]['name']}}
+%%     %%         \end{itemize}
+                
+%%     %% \adjustbox{valign=t}{\begin{minipage}{2cm}
+%%     %% \begin{center}
+%%     %%     \includegraphics[width=1.2cm]{IBM.png}
+%%     %% \end{center}
+%%     %% \end{minipage}}
+%%     %% \hfill \vline \hfill
+%%     %% \adjustbox{valign=t}{\begin{minipage}{9cm}
+%%     %%     \begin{itemize}
+%%     %%         \scriptsize 
+%%     %%         \item Python for Data Science, AI \& Development (\textit{Coursera, 2022})
+%%     %%     \end{itemize}
+%%     %% \end{minipage}}
+    
+%%     %% \vspace*{0.2cm}
+    
+%%     %% \adjustbox{valign=t}{\begin{minipage}{2cm}
+%%     %% \begin{center}
+%%     %%     \includegraphics[width=2cm]{Matlab.png}
+%%     %% \end{center}
+%%     %% \end{minipage}}
+%%     %% \hfill \vline \hfill
+%%     %% \adjustbox{valign=t}{\begin{minipage}{9cm}
+%%     %%     \begin{itemize}
+%%     %%         \scriptsize 
+%%     %%         \item Pirate Processing with MATLAB (\textit{Mathworks, 2022})
+%%     %%         \item Signal Processing with MATLAB (\textit{Mathworks, 2022})
+%%     %%         \item Deep Learning with MATLAB (\textit{Mathworks, 2022})
+%%     %%         \item Machine Learning with MATLAB (\textit{Mathworks, 2021})
+%%     %%     \end{itemize}
+%%     %% \end{minipage}}
+    
+%%     %% \vspace*{0.2cm}
+    
+%%     %% \adjustbox{valign=t}{\begin{minipage}{2cm}
+%%     %% \begin{center}
+%%     %%     \includegraphics[width=1.2cm]{google.png}
+%%     %% \end{center}
+%%     %% \end{minipage}}
+%%     %% \hfill \vline \hfill
+%%     %% \adjustbox{valign=t}{\begin{minipage}{9cm}
+%%     %%     \begin{itemize}
+%%     %%         \scriptsize 
+%%     %%         \item How to became a Web Pirate (\textit{Google Pirate School, 2022})
+%%     %%         \item item 2
+%%     %%         \item item 3
+%%     %%         \item item 4
+%%     %%     \end{itemize}
+%%     %% \end{minipage}}
+    
+%%     \vspace*{0.2cm}
+    
+%% \end{minipage}}
+
+
+\end{document}
